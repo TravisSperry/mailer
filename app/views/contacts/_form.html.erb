@@ -1,0 +1,17 @@
+<%= simple_form_for @contact do |f| %>
+<% if @contact.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this student from being saved:</h2>
+    <ul>
+    <% @contact.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+  <p><%= f.input :first_name, placeholder: "First Name", label: false %></p>
+  <p><%= f.input :last_name, placeholder: "Last Name", label: false %></p>
+  <p><%= f.input :email, placeholder: "Email Name", label: false %></p>
+  </br>
+  <%= f.submit 'Join The Fun', class: "btn-lg btn-success" %>
+<% end %>
