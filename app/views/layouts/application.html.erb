@@ -10,12 +10,14 @@
   </head>
   <body>
     <div class="container">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <% flash.each do |type, message| %>
         <div class="pull-right alert alert-<%= flash_class type %> alert-dismissable">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <%= message %>
         </div>
       <% end %>
+    </div>
     </div>
      <!-- Side Menu -->
     <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>

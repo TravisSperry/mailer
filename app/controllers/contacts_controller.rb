@@ -13,12 +13,20 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(params[:contact])
+
+      respond_to do |format|
     if @contact.save
-      redirect_to root_url, :notice => "You have been added to the list :)"
+      result = PonyExpress.registration_confirmation(@contact).deliver
+      format.html { redirect_to root_url, notice: 'You have been added to the list :)' }
+      format.json { render json: @contact, status: :created, location: @contact }
     else
-      render :action => 'new'
+      format.html { render template: "pages/home" }
+      format.json { render json: @contact.errors, status: :unprocessable_entity }
     end
   end
+
+  end
+
 
   def edit
     @contact = Contact.find(params[:id])

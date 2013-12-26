@@ -57,5 +57,6 @@ gem "nested_form", :git => "git://github.com/ryanb/nested_form.git"
 gem "simple_form"
 gem "country_select"
 gem "postageapp"
+gem "mail"
 
 gem "mocha", :group => :test
