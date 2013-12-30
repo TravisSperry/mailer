@@ -1,12 +1,14 @@
 /*
  *= require chosen
  *= require jquery.ui.all
- *= require_tree
+ *= require events
+ *= require font-awesome
+ *= require pages
+ *= require stylish-portfolio
 */
 
 @import 'compass';
 @import 'bootstrap';
-@import 'font-awesome';
 @import 'gritter';
 
 .alert{
