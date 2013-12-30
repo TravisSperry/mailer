@@ -2,17 +2,19 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :contact %>
+    <%= f.input :title, label: "Event Title" %>
+    <%= f.input :contact, label: "Event Contact" %>
     <%= f.input :organization %>
     <%= f.input :date, as: :string %>
     <%= f.input :description, input_html: { rows: 5 } %>
+    <%= f.input :age, label: "Age Group For Event", hint: "Grades or Ages", placeholder: "i.e. K-5, or 6-12 y.o." %>
     <%= f.input :phone %>
-    <%= f.input :address %>
+    <%= f.input :email, hint: "Email is not published. This is so we can contact you if need be." %>
+    <%= f.input :address, label: "Event Address", placeholder: "Where would someone go to attend this event?" %>
     <%= f.input :city %>
     <%= f.input :state %>
     <%= f.input :zip %>
-    <%= f.input :cost %>
+    <%= f.input :cost, label: "Event Cost", placeholder: 'How much do you have to pay to attend?' %>
   </div>
 </br>
   <div class="form-actions">

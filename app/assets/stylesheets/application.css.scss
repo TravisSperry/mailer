@@ -10,7 +10,6 @@
 @import 'font-awesome';
 @import 'gritter';
 
-
 .alert{
   margin-top: 50px;
   position: absolute;
@@ -19,7 +18,7 @@
 }
 
 body {
-  background-color: #4B7399;
+  background-color: #fff;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
@@ -99,6 +98,12 @@ a {
   border-bottom: solid gray 1px;
 }
 
-// .registration > a:hover {
-//   background-color: 0;
-// }
+.registration {
+  a {
+    color: #333333;
+  }
+
+  a:hover{
+    color: #666666;
+  }
+}
