@@ -1,0 +1,31 @@
+<!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+          <ul class="list-inline">
+            <li><i class="fa fa-facebook fa-3x"></i></li>
+            <li><i class="fa fa-twitter fa-3x"></i></li>
+            <li><i class="fa fa-dribbble fa-3x"></i></li>
+          </ul>
+          <div class="top-scroll">
+            <a href="#top"><i class="fa fa-circle-arrow-up scroll fa-4x"></i></a>
+          </div>
+          <hr>
+          <p>Copyright &copy; EnrichColumbus 2013</p>
+            <div class="admin_login">
+              <% if admin_signed_in? %>
+                <%= link_to destroy_admin_session_path do %>
+                  <i class="fa fa-lock fa-2x"></i>
+                <% end %>
+              <% else %>
+                <%= link_to new_admin_session_path do %>
+                  <i class="fa fa-unlock fa-2x"></i>
+                <% end %>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- /Footer -->
