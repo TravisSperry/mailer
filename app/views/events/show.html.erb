@@ -1,0 +1,55 @@
+<div class="container event_show">
+  <p>
+    <b>Title:</b>
+    <%= @event.title %>
+  </p>
+
+  <p>
+    <b>Organiztion:</b>
+    <%= @event.organization %>
+  </p>
+
+  <p>
+    <b>Contact:</b>
+    <%= @event.contact %>
+  </p>
+
+  <p>
+    <b>Phone:</b>
+    <%= @event.phone %>
+  </p>
+
+  <p>
+    <b>Address:</b>
+    <%= @event.address %>
+  </p>
+
+  <p>
+    <b>City:</b>
+    <%= @event.city %>
+  </p>
+
+  <p>
+    <b>State:</b>
+    <%= @event.state %>
+  </p>
+
+  <p>
+    <b>Zip:</b>
+    <%= @event.zip %>
+  </p>
+
+  <p>
+    <b>Description:</b>
+    <%= @event.description %>
+  </p>
+
+  <p>
+    <b>Cost:</b>
+    <%= @event.cost %>
+  </p>
+
+
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
+</div>

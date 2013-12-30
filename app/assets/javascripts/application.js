@@ -1,5 +1,7 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
+//= require date
 //= require chosen-jquery
 //= require jquery.remotipart
 //= require jquery_nested_form

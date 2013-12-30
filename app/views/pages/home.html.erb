@@ -12,8 +12,17 @@
           </div>
       </div>
     <div class="row">
-      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 ">
+      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 bottom_line">
         <%= render "contacts/form" %>
+      </div>
+    </div>
+  </br>
+    <div class="row">
+      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 registration">
+        <a href="/#eventregistration">
+          <h2>Register Events Below</h2>
+          <i class="fa fa-angle-down fa-5x"></i>
+        </a>
       </div>
     </div>
   </div>
@@ -27,7 +36,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
         <h2>Gain access to the largest list of enrichment activities in Central Ohio.</h2>
-        <p class="lead">We compile a list each month and then let it fly.</p>
+        <p class="lead">We compile a list each month and then let it  <i class="fa fa-plane"> </i>.</p>
       </div>
     </div>
   </div>
@@ -86,12 +95,12 @@
 <!-- /Callout -->
 
 <!-- Call to Action -->
-<div class="call-to-action">
+<div id="eventregistration" class="call-to-action">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
-        <h3>Have some events to share?</h3>
-        <a href="#" class="btn btn-lg btn-default">Register An Event!</a>
+        <h2>Have some events to share?</h2>
+        <a href="<%= new_event_path %>" class="btn btn-lg btn-warning">Register An Event!</a>
       </div>
     </div>
   </div>

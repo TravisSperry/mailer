@@ -1,6 +1,9 @@
-/*= require_self */
-/*= require chosen */
-/*= require_tree */
+/*
+ *= require_self
+ *= require chosen
+ *= require jquery.ui.all
+ *= require_tree
+*/
 
 @import 'compass';
 @import 'bootstrap';
@@ -90,3 +93,12 @@ a {
 .error_messages ul {
   margin: 0;
 }
+
+.bottom_line{
+  padding-bottom: 50px;
+  border-bottom: solid gray 1px;
+}
+
+// .registration > a:hover {
+//   background-color: 0;
+// }

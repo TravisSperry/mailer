@@ -1,5 +1,8 @@
 Mailer::Application.routes.draw do
 
+  resources :events
+
+
   resources :contacts
 
   root :to => 'pages#home'
