@@ -10,6 +10,9 @@
     <li><a href="/#about">About</a></li>
     <li><a href="/#services">Services</a></li>
     <% end %>
+    <% if admin_signed_in? %>
+    <li><a href="<%= edit_admin_password_path %>">About</a></li>
+    <% end %>
   </ul>
 </div>
 <!-- /Side Menu -->
