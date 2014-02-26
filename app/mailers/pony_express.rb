@@ -10,4 +10,10 @@ class PonyExpress < PostageApp::Mailer
       to: "#{contact.email}"
       )
   end
+
+  def event_email(email)
+    mail(
+      to: "#{email}"
+      )
+  end
 end
