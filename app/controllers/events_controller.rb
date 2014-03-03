@@ -69,6 +69,16 @@ class EventsController < ApplicationController
     end
   end
 
+  def send_event_email
+    @emails = []
+    @subject = params[:subject]
+    @body = params[:body]
+
+    @emails.each do |email|
+      PonyExpress.email(email, @subject, @body).deliver
+    end
+  end
+
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy

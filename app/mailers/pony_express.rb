@@ -13,8 +13,16 @@ class PonyExpress < PostageApp::Mailer
 
   def event_email(email)
     mail(
-      subject: "New Albany Summer Camp Fair",
-      to: "#{email}"
+      to: "#{email}",
+      subject: "New Albany Summer Camp Fair"
+      )
+  end
+
+  def email(email, subject, email_body)
+    mail(
+      to: "#{email}",
+      body: email_body,
+      subject: "New Albany Summer Camp Fair"
       )
   end
 end
