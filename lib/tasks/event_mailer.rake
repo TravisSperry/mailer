@@ -2,23 +2,7 @@ namespace :mail do
   desc "Send Event Mailer"
   task event_email: :environment do
     emails = %w(
-      educlass@columbuszoo.org
-      lbareclay@yahoo.com
-      continuinged@ccad.edu
-      info@granvillerex.org
-      arts@mcconnellarts.org
-      arkow.1@napls.us
-      info@fpconservatory.org
-      cfallon@maginificentmanners.com
-      info@attheworks.org
-      dance@balletmet.org
-      chris@christianhowes.com
-      info@ohionature.org
-      al@canoecreation.org
-      suziemuzic@gmail.com
-      information@thewilds.org
-      gail@legorobotcamps.com
-      michael@legorobotcamps.com
+      cthompson@techcorps.org
       )
 
     emails.each do |email|
