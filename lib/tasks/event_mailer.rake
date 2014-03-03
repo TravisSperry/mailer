@@ -17,6 +17,8 @@ namespace :mail do
       al@canoecreation.org
       suziemuzic@gmail.com
       information@thewilds.org
+      gail@legorobotcamps.com
+      michael@legorobotcamps.com
       )
 
     emails.each do |email|
