@@ -1,7 +1,5 @@
 <% if admin_signed_in? %>
-<div class="container admin_home">
-  <h1>You're an admin and you're signed in!</h1>
-</div>
+  <%= render 'admin_home' %>
 <% else %>
 <!-- Full Page Image Header Area -->
 <div id="top" class="header">
