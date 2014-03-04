@@ -2,9 +2,13 @@
 <% if @contact.errors.any? %>
     <%= f.error_notification %>
 <% end %>
-  <p><%= f.input :first_name, placeholder: "First Name", label: false %></p>
-  <p><%= f.input :last_name, placeholder: "Last Name", label: false %></p>
-  <p><%= f.input :email, placeholder: "Email Name", label: false %></p>
-  </br>
-  <%= f.submit 'Join The Fun', class: "btn-lg btn-success" %>
+<div class="row">
+  <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 ">
+    <p><%= f.input :first_name, placeholder: "First Name", label: false %></p>
+    <p><%= f.input :last_name, placeholder: "Last Name", label: false %></p>
+    <p><%= f.input :email, placeholder: "Email Name", label: false %></p>
+    </br>
+    <%= f.submit 'Join The Fun', class: "btn-lg btn-success" %>
+  </div>
+</div>
 <% end %>
