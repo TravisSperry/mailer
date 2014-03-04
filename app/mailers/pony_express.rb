@@ -7,6 +7,7 @@ class PonyExpress < PostageApp::Mailer
     @contact = contact
 
     mail(
+      subject: "Enrich Columbus: Registration Confirmation"
       to: "#{contact.email}"
       )
   end
