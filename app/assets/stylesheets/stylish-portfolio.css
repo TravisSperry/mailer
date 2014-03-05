@@ -110,7 +110,7 @@ body {
   width: 100%;
   position: relative;
   background-color: #99ccff;
-  /*background: url('bg.jpg') no-repeat center center fixed;*/
+  background: radial-gradient(circle,#94d2f8,#3a92c8);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -221,7 +221,7 @@ i.scroll:hover {
 @media (max-width: 768px) {
 
   .header {
-        background: url('bg.jpg') no-repeat center center scroll;
+        background: radial-gradient(circle,#94d2f8,#3a92c8) no-repeat center center scroll;
   }
 
   .callout {

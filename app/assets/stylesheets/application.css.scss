@@ -100,6 +100,16 @@ a {
   border-bottom: solid gray 1px;
 }
 
+.list-inline {
+  a {
+    color: #333333;
+  }
+
+  a:hover{
+    color: #666666;
+  }
+}
+
 .registration {
   a {
     color: #333333;
