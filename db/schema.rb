@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131230214414) do
+ActiveRecord::Schema.define(:version => 20140327141038) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -56,6 +56,43 @@ ActiveRecord::Schema.define(:version => 20131230214414) do
     t.boolean  "approved"
     t.string   "age"
     t.string   "email"
+  end
+
+  create_table "parents", :force => true do |t|
+    t.integer  "registration_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "role"
+    t.string   "email"
+    t.string   "volunteer"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "registrations", :force => true do |t|
+    t.integer  "event_id"
+    t.string   "school_name"
+    t.integer  "student_count"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.text     "comment"
+    t.boolean  "volunteer"
+    t.boolean  "fee_waiver"
+    t.boolean  "consent"
+    t.text     "comments"
+    t.string   "stripe_card_token"
+    t.integer  "total"
+    t.string   "stripe_charge_token"
+  end
+
+  create_table "students", :force => true do |t|
+    t.integer  "registration_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "grade"
+    t.string   "email"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

@@ -1,0 +1,32 @@
+.reg_form{
+  .form-group{
+    margin-bottom: 0;
+  }
+  td{
+    padding: 5px;
+  }
+}
+
+form#new_registration{
+  .btn{
+    margin-top: 10px;
+  }
+}
+
+.reg_table{
+  background-color: #cccccc;
+  margin: 10px 0 10px 0;
+  padding: 3px 30px 5px 30px;
+          border-radius: 5px 5px 5px 5px;
+     -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px;
+  -webkit-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+     -moz-box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+          box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+}
+
+.fields{
+  td{
+    vertical-align: middle;
+  }
+}

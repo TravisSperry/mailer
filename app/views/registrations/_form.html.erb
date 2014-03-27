@@ -1,0 +1,122 @@
+<style type:"text/css">
+BODY
+{
+background-color: #deddd2;
+}
+</style>
+
+<h2>COSI &mdash; May 4th, 2014</h2>
+
+<div class="description">
+  This mathematics festival is open to students in grades 6-12 and will take place 1:00pm - 4:00pm on Sunday, May 4th, 2014. It will be held at COSI's Gallery 1. <a href="http://www.cosi.org/events/weddings/directions-parking" target="_blank">Look here for directions</a>.
+  <br><br>
+  The event's collaborative, non-competitive atmosphere offers an alternate setting for students to explore the joys and power of mathematics with other kids and older mentors.
+  <br><br>
+  We provide the mathematics and mathematicians to work with the students on the activities. Please bring an adult to provide supervision of your children/students. Admission for kids is $10; supervising adults are free. If you can't afford the fee, there is a checkbox at the bottom of the form to waive it.
+  <br><br>
+  Registration at the door is $20.
+  <br><br>
+  If you have any questions, please contact us at events@enrichcolumbus.org
+</div>
+
+  <h3>Register to Attend</h3>
+
+<%= simple_nested_form_for @registration, wrapper: false do |f| %>
+  <%= f.error_notification %>
+  <div class="row">
+    <div class="col-lg-6">
+      <%= f.input :school_name, label: "School Name or Home School" %>
+    </div>
+  </div>
+  <div class="reg_table">
+    <h3>Students</h3>
+    <table class="reg_form" id="students">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Grade Level</th>
+        <th>Email</th>
+        <th></th>
+      </tr>
+      <%= f.fields_for :students, wrapper: false do |student_form| %>
+        <tr class="add_student fields">
+          <td><%= student_form.hidden_field :id %><%= student_form.input :first_name, label: false %></td>
+          <td><%= student_form.input :last_name, label: false %></td>
+          <td><%= student_form.input :grade, collection: Student::GRADES, label: false %></td>
+          <td><%= student_form.input :email, label: false %></td>
+          <td>
+            <%= student_form.link_to_remove do %>
+              <i class="glyphicon glyphicon-remove close"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <p><%= f.link_to_add "Add a student", :students, :data => { :target => "#students" }, class: "btn btn-xs btn-warning", id: "add_student" %></p>
+  </div>
+  <div class="reg_table">
+    <h3>Parents</h3>
+    <table class="reg_form" id="parents">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Role</th>
+        <th>Email</th>
+        <th>Volunteer?</th>
+        <th></th>
+      </tr>
+      <%= f.fields_for :parents, wrapper: false do |parent_form| %>
+        <tr style="margin-top:20px;" class="fields">
+          <td><%= parent_form.hidden_field :id %><%= parent_form.input :first_name, label: false %></td>
+          <td><%= parent_form.input :last_name, label: false %></td>
+          <td><%= parent_form.input :role, collection: Parent::ROLES, label: false %></td>
+          <td><%= parent_form.input :email, label: false %></td>
+          <td><%= parent_form.input :volunteer, collection: Parent::VOLUNTEER, label: false %></td>
+          <td>
+            <%= parent_form.link_to_remove do %>
+              <i class="glyphicon glyphicon-remove close"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <p><%= f.link_to_add "Add a parent", :parents, :data => { :target => "#parents" }, class: "btn btn-xs btn-warning" %></p>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8">
+    <h2>Payment</h2>
+    <fieldset>
+      <p>The registration fee for this event is $10 PER STUDENT.</p>
+
+      <p>If you are financially unable to pay the registration fee, you may request to have your registration fee waived. Your registration will still be accepted and the students can still attend the event.</p>
+
+      <p><%= f.input :fee_waiver, label: false, inline_label: "Check this box to request a registration fee waiver." %></p>
+
+      <p>
+        Please alert us to any mobility issues, or
+        other special needs we should be aware of.
+        Also feel free to include any comments: <br>
+        <div class="row">
+          <div class="col-lg-7">
+          <%= f.input :comments, label: false, input_html: { rows: 4 } %>
+          </div>
+        </div>
+      </p>
+
+        <p>
+          <%= f.input :consent, label: false, inline_label: "Children under 18 require consent from parent or guardian to fill out this form. Check this box if you have their consent." %>
+        </p>
+
+        <%= f.input :student_count, as: :hidden %>
+        <%= f.input :stripe_card_token, as: :hidden %>
+        <%= f.input :total, as: :hidden %>
+    </div>
+    <div class="col-lg-4">
+        <%= render 'credit_card_info' %>
+      </br>
+      </br>
+        <%= f.submit "Submit Registration", class: "btn-lg btn-success", id: "submit_registration" %>
+    </div>
+  </div>
+<% end %>

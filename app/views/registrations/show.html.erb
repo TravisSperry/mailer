@@ -1,0 +1,52 @@
+<div style="margin-top:120px;" class="container">
+  <p>
+    <b>Event:</b>
+    <%= @registration.event_id %>
+  </p>
+
+  <p>
+    <% if @registration.fee_waiver %>
+      You're tuition has been waived. Donations will be accepted at the door but are not required for entry.
+    <% else %>
+      You're tuition has been paid. The amount of $<%= number_with_precision(@registration.total.to_f/100, precision: 2) %> has been received and recorded.
+    <% end %>
+  </p>
+
+  <p>
+    <b>School name:</b>
+    <%= @registration.school_name %>
+  </p>
+
+  <p>
+    <b>Student count:</b>
+    <%= @registration.student_count %>
+  </p>
+
+  <p>
+    <b>Students:</b>
+    <ul>
+    <% @registration.students.each do |student| %>
+     <li><%= student.first_name %></li>
+    <% end %>
+    </ul>
+  </p>
+
+  <p>
+    <b>Parents:</b>
+    <ul>
+    <% @registration.parents.each do |parent| %>
+     <li>
+      <%= parent.first_name %>
+      <% if parent.volunteer %>
+        (<%= parent.volunteer %>)
+      <% end %>
+    </li>
+    <% end %>
+    </ul>
+  </p>
+
+  <% if admin_signed_in? %>
+    <%= link_to 'Edit', edit_registration_path(@registration) %> |
+    <%= link_to 'Back', registrations_path %>
+  <% end %>
+</div>

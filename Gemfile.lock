@@ -157,6 +157,8 @@ GEM
       json (~> 1.4)
     ref (1.0.5)
     remotipart (1.2.1)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     ruby-hmac (0.4.0)
     sass (3.2.12)
     sass-rails (3.2.6)
@@ -176,6 +178,10 @@ GEM
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       polyamorous (~> 0.6.0)
+    stripe (1.9.9)
+      mime-types (~> 1.25)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.4)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
@@ -231,6 +237,7 @@ DEPENDENCIES
   simple_form
   sqlite3
   squeel
+  stripe
   therubyracer
   uglifier (>= 1.0.3)
   underscore-rails

@@ -1,4 +1,7 @@
 class ContactsController < ApplicationController
+
+  before_filter :authenticate_admin!, :except => [:new, :create]
+
   def index
     @contacts = Contact.all
   end

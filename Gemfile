@@ -40,5 +40,6 @@ gem "country_select"
 gem "postageapp"
 gem "mail"
 gem "devise"
+gem "stripe"
 
 gem "mocha", :group => :test

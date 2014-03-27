@@ -1,5 +1,14 @@
 Mailer::Application.routes.draw do
 
+  resources :students
+
+
+  resources :parents
+
+
+  resources :registrations
+
+
   devise_for :admins
 
   resources :events

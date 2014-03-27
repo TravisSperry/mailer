@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event_id: 1
+  school_name: MyString
+  student_count: 1
+
+two:
+  event_id: 1
+  school_name: MyString
+  student_count: 1

@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+
+  before_filter :authenticate_admin!, :except => [:new, :create]
+
   # GET /events
   # GET /events.json
   def index
