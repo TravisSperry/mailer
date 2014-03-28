@@ -4,7 +4,8 @@
 
 jQuery ->
   $ed = $('#event_date')
-  $ed.datepicker()
+  $ed.datepicker
+    dateFormat: 'yy-mm-dd'
   $ed.on 'change', ->
     today = new Date()
     date = new Date($ed.val())

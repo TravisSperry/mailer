@@ -1,7 +1,10 @@
 class Registration < ActiveRecord::Base
   attr_accessible :event_id, :school_name, :students_attributes,
                   :parents_attributes, :fee_waiver, :comments, :consent,
-                  :student_count, :total, :stripe_charge_token, :stripe_card_token
+                  :student_count, :total, :stripe_charge_token, :stripe_card_token,
+                  :contact_email
+
+  validates :contact_email, presence: true
 
   belongs_to :event
   has_many :students

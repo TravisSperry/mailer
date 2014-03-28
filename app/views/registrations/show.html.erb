@@ -1,7 +1,7 @@
 <div style="margin-top:120px;" class="container">
   <p>
     <b>Event:</b>
-    <%= @registration.event_id %>
+    <%= @registration.event.title if @registration.event %>
   </p>
 
   <p>
@@ -36,8 +36,8 @@
     <ul>
     <% @registration.parents.each do |parent| %>
      <li>
-      <%= parent.first_name %>
-      <% if parent.volunteer %>
+      <%= parent.first_name %> <%= parent.last_name %>
+      <% if parent.volunteer && parent.volunteer != "" %>
         (<%= parent.volunteer %>)
       <% end %>
     </li>

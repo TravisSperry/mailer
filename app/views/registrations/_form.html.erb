@@ -27,7 +27,11 @@ background-color: #deddd2;
     <div class="col-lg-6">
       <%= f.input :school_name, label: "School Name or Home School" %>
     </div>
+    <div class="col-lg-4">
+      <%= f.input :contact_email, label: "Email for confirmation to be sent to..." %>
+    </div>
   </div>
+</br>
   <div class="reg_table">
     <h3>Students</h3>
     <table class="reg_form" id="students">
@@ -35,7 +39,6 @@ background-color: #deddd2;
         <th>First Name</th>
         <th>Last Name</th>
         <th>Grade Level</th>
-        <th>Email</th>
         <th></th>
       </tr>
       <%= f.fields_for :students, wrapper: false do |student_form| %>
@@ -43,7 +46,6 @@ background-color: #deddd2;
           <td><%= student_form.hidden_field :id %><%= student_form.input :first_name, label: false %></td>
           <td><%= student_form.input :last_name, label: false %></td>
           <td><%= student_form.input :grade, collection: Student::GRADES, label: false %></td>
-          <td><%= student_form.input :email, label: false %></td>
           <td>
             <%= student_form.link_to_remove do %>
               <i class="glyphicon glyphicon-remove close"></i>
@@ -108,6 +110,7 @@ background-color: #deddd2;
           <%= f.input :consent, label: false, inline_label: "Children under 18 require consent from parent or guardian to fill out this form. Check this box if you have their consent." %>
         </p>
 
+        <%= f.input :event_id, as: :hidden, input_html: { value: 2 } %>
         <%= f.input :student_count, as: :hidden %>
         <%= f.input :stripe_card_token, as: :hidden %>
         <%= f.input :total, as: :hidden %>

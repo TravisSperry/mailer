@@ -55,6 +55,7 @@ class RegistrationsController < ApplicationController
       #process registration without fee
       respond_to do |format|
         if @registration.save_without_payment
+          result = PonyExpress.event_registration_confirmation(@registration).deliver
           format.html { redirect_to @registration, notice: 'Registration was successfully created. Your fee has been waived. Print this page for your records' }
           format.json { render json: @registration, status: :created, location: @registration }
         else
@@ -66,6 +67,7 @@ class RegistrationsController < ApplicationController
       #STRIPE save_with_payment
       respond_to do |format|
         if @registration.save_with_payment
+          result = PonyExpress.event_registration_confirmation(@registration).deliver
           format.html { redirect_to registration_path(id: @registration.id, charge_id: @registration.stripe_charge_token), notice: 'Registration was successfully created.' }
           format.json { render json: @registration, status: :created, location: @registration }
         else

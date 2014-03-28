@@ -12,6 +12,14 @@ class PonyExpress < PostageApp::Mailer
       )
   end
 
+  def event_registration_confirmation(registration)
+    @registration = registration
+    mail(
+      subject: "Event Registration Confirmation",
+      to: "#{registration.contact_email}"
+      )
+  end
+
   def event_email(email)
     mail(
       to: "#{email}",
