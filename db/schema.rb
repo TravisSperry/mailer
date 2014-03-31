@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140328194032) do
+ActiveRecord::Schema.define(:version => 20140331174928) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20140328194032) do
     t.integer  "total"
     t.string   "stripe_charge_token"
     t.string   "contact_email"
+    t.boolean  "cosi_member"
   end
 
   create_table "students", :force => true do |t|
