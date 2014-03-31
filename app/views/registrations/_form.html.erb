@@ -4,17 +4,31 @@ BODY
 background-color: #deddd2;
 }
 </style>
+<%= link_to("http://juliarobinsonmathfestival.org/") do %>
+  <%= image_tag("jrmf-logo.png")%>
+<% end %>
+</br>
 
-<h2>COSI &mdash; May 4th, 2014</h2>
+<h2>COSI &mdash; May 4th, 2014 &mdash; 12pm to 3pm &mdash; Grades 5-9 </h2>
+
 
 <div class="description">
-  This mathematics festival is open to students in grades 6-12 and will take place 1:00pm - 4:00pm on Sunday, May 4th, 2014. It will be held at COSI's Gallery 1. <a href="http://www.cosi.org/events/weddings/directions-parking" target="_blank">Look here for directions</a>.
+  This mathematics festival is open to students in grades 5-9 and will take place 12:00pm - 3:00pm on Sunday, May 4th, 2014. It will be held at COSI's Gallery 1. <a href="http://www.cosi.org/events/weddings/directions-parking" target="_blank">Look here for directions</a>.
   <br><br>
   The event's collaborative, non-competitive atmosphere offers an alternate setting for students to explore the joys and power of mathematics with other kids and older mentors.
   <br><br>
-  We provide the mathematics and mathematicians to work with the students on the activities. Please bring an adult to provide supervision of your children/students. Admission for kids is $10; supervising adults are free. If you can't afford the fee, there is a checkbox at the bottom of the form to waive it.
-  <br><br>
-  Registration at the door is $20.
+  <div class="row">
+    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+      <strong>How it works:</strong><br />
+      During the festival, students can join any table and work collaboratively with the volunteers and students there. Students are welcome to try out several tables until they find one that particularly interests them; once they do, they are encouraged to spend 30 &#8211; 45 minutes or more at that activity. Almost no activities will be possible to finish completely during the festival. Students will be able to take home activities that they have spent time on. There will also be a mathematical games area.
+      We provide the mathematics and mathematicians to work with the students on the activities. Please bring an adult to provide supervision of your children/students. Admission for kids is $10; supervising adults are free. If you can't afford the fee, there is a checkbox at the bottom of the form to waive it.
+      <br><br>
+      Registration at the door is $20.
+    </div>
+    <div style="text-align:center;" class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+      <iframe src="//www.youtube.com/embed/Idow6vKyaXg?rel=0" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
+    </div>
+  </div>
   <br><br>
   If you have any questions, please contact us at events@enrichcolumbus.org
 </div>
@@ -123,3 +137,26 @@ background-color: #deddd2;
     </div>
   </div>
 <% end %>
+<hr>
+<div class="sponsors">
+  <h1 style="text-align:center;">Sponsors</h1>
+  </br>
+  </br>
+  <div class="row">
+    <div style="text-align:center;" class="col-lg-4">
+      <%= link_to("http://www.cosi.org/") do %>
+        <%= image_tag("COSI_Logo.jpg", width: "250")%>
+      <% end %>
+    </div>
+    <div style="text-align:center;" class="col-lg-4">
+      <%= link_to("http://www.mathplusacademy.com/") do %>
+        <%= image_tag("Math_Plus-Logo.png", width: "300")%>
+      <% end %>
+    </div>
+    <div style="text-align:center;" class="col-lg-4">
+      <%= link_to("http://www.osu.edu/") do %>
+        <%= image_tag("OSU-logo_620x400.png", width: "250")%>
+      <% end %>
+    </div>
+  </div>
+</div>
