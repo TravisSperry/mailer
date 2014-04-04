@@ -4,7 +4,10 @@ class Registration < ActiveRecord::Base
                   :student_count, :total, :stripe_charge_token, :stripe_card_token,
                   :contact_email, :cosi_member
 
-  validates :contact_email, presence: true
+  validates :contact_email, presence: true, format: { with: /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i, on: :create }
+
+    /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i
+
 
   belongs_to :event
   has_many :students
