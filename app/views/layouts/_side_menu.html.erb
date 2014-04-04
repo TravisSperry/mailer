@@ -11,7 +11,9 @@
     <li><a href="/#services">Services</a></li>
     <% end %>
     <% if admin_signed_in? %>
-    <li><a href="<%= edit_admin_password_path %>">About</a></li>
+    <li>
+        <%= link_to "Change your password", edit_admin_registration_path %>
+    </li>
     <% end %>
   </ul>
 </div>

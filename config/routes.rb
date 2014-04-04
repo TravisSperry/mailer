@@ -6,7 +6,11 @@ Mailer::Application.routes.draw do
 
   resources :registrations
 
-  devise_for :admins
+  devise_for :admins, :skip => [:registrations]
+    as :admin do
+      get 'admins/edit' => 'devise/registrations#edit', :as => 'edit_admin_registration'
+      put 'admins/:id' => 'devise/registrations#update', :as => 'admin_registration'
+    end
 
   resources :events
 

@@ -13,3 +13,22 @@
 .admin_home{
   padding-top: 120px;
 }
+
+.admin_panel{
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 5px;
+}
+.panel_header{
+  border-bottom: 1px solid gray;
+  text-align: center;
+  padding: 0 5px 0 5px;
+}
+.panel_body{
+  text-align: center;
+  padding: 0 5px 0 5px;
+  h3{
+    font-size: 5em;
+    color: #666666;
+  }
+}
