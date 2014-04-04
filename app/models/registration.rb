@@ -2,7 +2,7 @@ class Registration < ActiveRecord::Base
   attr_accessible :event_id, :school_name, :students_attributes,
                   :parents_attributes, :fee_waiver, :comments, :consent,
                   :student_count, :total, :stripe_charge_token, :stripe_card_token,
-                  :contact_email
+                  :contact_email, :cosi_member
 
   validates :contact_email, presence: true
 
