@@ -20,7 +20,7 @@
 
     <%= render 'layouts/footer' %>
 
-    <%= render 'layouts/ga' %>
+    <%= render 'layouts/ga' if Rails.env.production? %>
 
   </body>
 </html>
