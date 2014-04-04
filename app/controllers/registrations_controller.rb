@@ -18,7 +18,7 @@ class RegistrationsController < ApplicationController
   def show
     @registration = Registration.find(params[:id])
 
-    if params[:charge_id] == @registration.stripe_charge_token
+    if params[:charge_id] == @registration.stripe_charge_token || admin_signed_in?
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @registration }
