@@ -32,7 +32,7 @@ class RegistrationsController < ApplicationController
     if params[:id]
       @registration = Registration.find(params[:id])
 
-      if PonyExpress.registration_confirmation(@registration).deliver
+      if PonyExpress.event_registration_confirmation(@registration).deliver
         redirect_to root_url, notice: "Confirmation Sent"
       end
     else
