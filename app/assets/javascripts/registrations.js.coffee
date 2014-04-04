@@ -1,4 +1,7 @@
 jQuery ->
+  # Add datables to all tables
+  $('.datatable').dataTable
+    sPaginationType: "bootstrap"
 
 
   # Update student count and total when text is enetered in fields

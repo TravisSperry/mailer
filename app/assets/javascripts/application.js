@@ -7,6 +7,8 @@
 //= require jquery_nested_form
 //= require init
 //= require jquery.html5-placeholder-shim
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap3
 //= require underscore
 //= require gritter
 //= require bootstrap

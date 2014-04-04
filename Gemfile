@@ -41,5 +41,6 @@ gem "postageapp"
 gem "mail"
 gem "devise"
 gem "stripe"
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 
 gem "mocha", :group => :test
