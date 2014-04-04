@@ -28,6 +28,18 @@ class RegistrationsController < ApplicationController
     end
   end
 
+  def email_confirmation
+    if params[:id]
+      @registration = Registration.find(params[:id])
+
+      if PonyExpress.registration_confirmation(@registration).deliver
+        redirect_to root_url, notice: "Confirmation Sent"
+      end
+    else
+      redirect_to root_url
+    end
+  end
+
   # GET /registrations/new
   # GET /registrations/new.json
   def new

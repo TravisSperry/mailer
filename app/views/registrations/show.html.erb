@@ -47,6 +47,6 @@
 
   <% if admin_signed_in? %>
     <%= link_to 'Edit', edit_registration_path(@registration) %> |
-    <%= link_to 'Back', registrations_path %>
+    <%= link_to 'Back', registrations_path %> | <%= link_to 'Send Confirmation', email_confirmation_path(id: @registration.id) %>
   <% end %>
 </div>
