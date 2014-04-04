@@ -1,55 +1,51 @@
 <div class="container event_show">
-  <p>
-    <b>Title:</b>
-    <%= @event.title %>
-  </p>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <p>
+        <b>Title:</b>
+        <%= @event.title %>
+      </p>
 
-  <p>
-    <b>Organiztion:</b>
-    <%= @event.organization %>
-  </p>
+      <p>
+        <b>Organiztion:</b>
+        <%= @event.organization %>
+      </p>
 
-  <p>
-    <b>Contact:</b>
-    <%= @event.contact %>
-  </p>
+      <p>
+        <b>Contact:</b>
+        <%= @event.contact %>
+      </p>
 
-  <p>
-    <b>Phone:</b>
-    <%= @event.phone %>
-  </p>
+      <p>
+        <b>Phone:</b>
+        <%= @event.phone %>
+      </p>
 
-  <p>
-    <b>Address:</b>
-    <%= @event.address %>
-  </p>
+      <p>
+        <b>Address:</b>
+        <%= @event.address %></br>
+        <%= @event.city %>, <%= @event.state %> <%= @event.zip %>
+      </p>
 
-  <p>
-    <b>City:</b>
-    <%= @event.city %>
-  </p>
+      <p>
+        <b>Description:</b>
+        <%= @event.description %>
+      </p>
 
-  <p>
-    <b>State:</b>
-    <%= @event.state %>
-  </p>
-
-  <p>
-    <b>Zip:</b>
-    <%= @event.zip %>
-  </p>
-
-  <p>
-    <b>Description:</b>
-    <%= @event.description %>
-  </p>
-
-  <p>
-    <b>Cost:</b>
-    <%= @event.cost %>
-  </p>
+      <p>
+        <b>Cost:</b>
+        <%= @event.cost %>
+      </p>
 
 
-  <%= link_to 'Edit', edit_event_path(@event) %> |
-  <%= link_to 'Back', events_path %>
+      <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-lg btn-primary" %> |
+      <%= link_to 'Events', events_path, class: "btn btn-lg btn-default" %>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <p>
+        <b>Registration count:</b>
+        <%= @event.registrations.count %>
+      </p>
+    </div>
+  </div>
 </div>
