@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  force_ssl
+
   def home
     @contact = Contact.new
     @registrations = Registration.all
