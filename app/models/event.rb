@@ -4,4 +4,6 @@ class Event < ActiveRecord::Base
                   :cost, :email, :age
 
   has_many :registrations
+  has_many :students, through: :registrations
+  has_many :parents, through: :registrations
 end
