@@ -23,8 +23,6 @@ student_count =
       if ($(this).val() or $(this).closest("[id$='_last_name']").val()) and $(this).closest('tr').is(":visible")
         count += 1
 
-    console.log count
-
     $("#registration_student_count").val(count)
     $('#registration_total > p').children('span').text("$#{count * 10}.00")
 
@@ -78,4 +76,3 @@ registration_payment =
       $('#stripe_error').text(response.error.message)
       $('#cc_field').addClass('has-error')
       $('input[type=submit]').attr('disabled', false)
-
