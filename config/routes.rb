@@ -19,5 +19,6 @@ Mailer::Application.routes.draw do
   root :to => 'pages#home'
 
   get '/mathfestival', to: 'registrations#new'
+  get '/CORIinvitational', to: 'pages#robotics'
   get '/email_confirmation', to: 'registrations#email_confirmation'
 end

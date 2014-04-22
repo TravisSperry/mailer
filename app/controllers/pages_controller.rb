@@ -6,4 +6,7 @@ class PagesController < ApplicationController
     @registrations = Registration.all
     @contacts = Contact.all
   end
+
+  def robotics
+  end
 end
