@@ -1,4 +1,9 @@
 jQuery ->
+  if !(document.getElementById("submit_registration") is null)
+    #calculate total on page load (incase of redirect)
+    student_count.update()
+    registration_payment.amountUpdate()
+
   # Add datables to all tables
   $('.datatable').dataTable
     sPaginationType: "bootstrap"
