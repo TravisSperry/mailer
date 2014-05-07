@@ -9,37 +9,26 @@
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
           <h1>ENRICH. columbus</h1>
           <h3>Access to Central Ohio's finest list of enrichment activities for kids and young adults.</h3>
-          <% if Time.now < Time.parse("2014-05-01")%>
+          <% if Time.now < Time.parse("2014-05-15")%>
             <h4 style="color:white;">First Newsletter Takes Off May 2014!</h4>
           <% end %>
           <p>Enter Your Email to Join</p>
           </div>
       </div>
-    <div class="row">
-      <div class="bottom_line center">
-        <div class="home_page_form">
-          <%= render "contacts/form" %>
+      <div class="row">
+        <div class="bottom_line center">
+          <div class="home_page_form">
+            <%= render "contacts/form" %>
+          </div>
+        </div>
+      </div>
+    </br>
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+          <h2>One Email. Once A Month. Tons of Great Stuff.</h1>
         </div>
       </div>
     </div>
-  </br>
-    <div class="row">
-      <div class="col-xs-12 col-lg-12 col-md-12 col-sm-12 registration">
-        <h2>Register for the Julia Robinson Math Festival!</h2>
-        <h5>Held at COSI, May 4th, 12pm - 3pm</h5></br>
-        <div class="hidden-sm hidden-xs">
-          <%= link_to "Event Registration and More Info", "/mathfestival", class: "btn btn-lg btn-default" %>
-        </div>
-        <div class="hidden-md hidden-lg">
-          <%= link_to "Event Registration/Info.", "/mathfestival", class: "btn btn-lg btn-default", style: "margin-bottom:40px;" %>
-        </div>
-        <!-- <a href="/#eventregistration">
-          <h2>Register Events Below</h2>
-          <i class="fa fa-angle-down fa-5x"></i>
-        </a> -->
-      </div>
-    </div>
-  </div>
   </div>
 </div>
 <!-- /Full Page Image Header Area -->
