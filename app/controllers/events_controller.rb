@@ -43,7 +43,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(params[:event])
+    @event = Event.new(event_params)
 
     respond_to do |format|
       if @event.save
@@ -62,7 +62,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
 
     respond_to do |format|
-      if @event.update_attributes(params[:event])
+      if @event.update_attributes(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
@@ -93,4 +93,15 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+    # Use this method to whitelist the permissible parameters. Example:
+    # params.require(:person).permit(:name, :age)
+    # Also, you can specialize this method with per-user checking of permissible attributes.
+    def event_params
+      params.require(:event).permit(:address, :city, :contact, :cost, :description,
+                                    :organization, :phone, :state, :title, :zip, :date,
+                                    :cost, :email, :age)
+    end
 end

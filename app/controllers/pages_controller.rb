@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  force_ssl
+  force_ssl if Rails.env.production?
 
   def home
     @contact = Contact.new

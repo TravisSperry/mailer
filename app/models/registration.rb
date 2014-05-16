@@ -1,10 +1,6 @@
 class Registration < ActiveRecord::Base
-  attr_accessible :event_id, :school_name, :students_attributes,
-                  :parents_attributes, :fee_waiver, :comments, :consent,
-                  :student_count, :total, :stripe_charge_token, :stripe_card_token,
-                  :contact_email, :cosi_member
 
-  validates :contact_email, presence: true, format: { with: /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i, on: :create }
+  validates :contact_email, presence: true, format: { with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i, on: :create }
 
     /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i
 

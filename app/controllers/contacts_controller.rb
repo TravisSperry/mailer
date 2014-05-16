@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(params[:contact])
+    @contact = Contact.new(contact_params)
 
       respond_to do |format|
     if @contact.save
@@ -37,7 +37,8 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
-    if @contact.update_attributes(params[:contact])
+s
+    if @contact.update_attributes(contact_params)
       redirect_to @contact, :notice  => "Successfully updated contact."
     else
       render :action => 'edit'
@@ -49,4 +50,13 @@ class ContactsController < ApplicationController
     @contact.destroy
     redirect_to contacts_url, :notice => "Successfully destroyed contact."
   end
+
+  private
+
+    # Use this method to whitelist the permissible parameters. Example:
+    # params.require(:person).permit(:name, :age)
+    # Also, you can specialize this method with per-user checking of permissible attributes.
+    def contact_params
+      params.require(:contact).permit(:first_name, :last_name, :email)
+    end
 end

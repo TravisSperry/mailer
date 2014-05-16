@@ -63,7 +63,7 @@ class RegistrationsController < ApplicationController
   # POST /registrations
   # POST /registrations.json
   def create
-    @registration = Registration.new(params[:registration])
+    @registration = Registration.new(registration_params)
 
     if @registration.fee_waiver?
       #process registration without fee
@@ -105,7 +105,7 @@ class RegistrationsController < ApplicationController
     @registration = Registration.find(params[:id])
 
     respond_to do |format|
-      if @registration.update_attributes(params[:registration])
+      if @registration.update_attributes(registration_params)
         format.html { redirect_to @registration, notice: 'Registration was successfully updated.' }
         format.json { head :no_content }
       else
@@ -126,4 +126,17 @@ class RegistrationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+    # Use this method to whitelist the permissible parameters. Example:
+    # params.require(:person).permit(:name, :age)
+    # Also, you can specialize this method with per-user checking of permissible attributes.
+    def registration_params
+      params.require(:registration).permit(
+                                          :event_id, :school_name, :students_attributes,
+                                          :parents_attributes, :fee_waiver, :comments, :consent,
+                                          :student_count, :total, :stripe_charge_token, :stripe_card_token,
+                                          :contact_email, :cosi_member)
+    end
 end

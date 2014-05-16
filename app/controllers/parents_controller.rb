@@ -40,7 +40,7 @@ class ParentsController < ApplicationController
   # POST /parents
   # POST /parents.json
   def create
-    @parent = Parent.new(params[:parent])
+    @parent = Parent.new(parent_params)
 
     respond_to do |format|
       if @parent.save
@@ -59,7 +59,7 @@ class ParentsController < ApplicationController
     @parent = Parent.find(params[:id])
 
     respond_to do |format|
-      if @parent.update_attributes(params[:parent])
+      if @parent.update_attributes(parent_params)
         format.html { redirect_to @parent, notice: 'Parent was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,4 +80,13 @@ class ParentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+    # Use this method to whitelist the permissible parameters. Example:
+    # params.require(:person).permit(:name, :age)
+    # Also, you can specialize this method with per-user checking of permissible attributes.
+    def parent_params
+      params.require(:parent).permit(:email, :first_name, :last_name, :registration_id, :role, :volunteer)
+    end
 end
