@@ -13,10 +13,8 @@ gem 'coffee-rails'
 gem 'uglifier'
 gem "bootstrap-sass"
 gem "font-awesome-sass-rails"
-
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-
 gem "high_voltage"
 gem "therubyracer"
 gem "compass-rails"
@@ -41,5 +39,5 @@ gem "mail"
 gem "devise"
 gem "stripe"
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
-
 gem "mocha", :group => :test
+gem "rails_12factor"
