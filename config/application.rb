@@ -58,6 +58,7 @@ module Mailer
     config.assets.precompile += [
       'enrichcolumbus_skyline.png',
       'enrichcolumbus_text.png',
+      'FontAwesome.otf'
     ]
 
     # Version of your assets, change this if you want to expire all your assets
