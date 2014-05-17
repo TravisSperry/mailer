@@ -40,4 +40,4 @@ gem "devise"
 gem "stripe"
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem "mocha", :group => :test
-gem "rails_12factor"
+gem "rails_12factor", group: :production
