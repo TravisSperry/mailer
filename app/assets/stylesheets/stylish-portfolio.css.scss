@@ -110,7 +110,7 @@ body {
   width: 100%;
   position: relative;
   background-color: #99ccff;
-  background: url('<%= asset_path("enrichcolumbus_skyline.png") %>')  no-repeat center center fixed;
+  background: url("enrichcolumbus_skyline.png")  no-repeat center center fixed;
   background-size: 1960px 980px;
 }
 
