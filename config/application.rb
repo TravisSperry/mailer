@@ -57,10 +57,6 @@ module Mailer
 
     config.serve_static_assets = true
 
-    config.assets.precompile += [
-      'enrichcolumbus_skyline.png'
-    ]
-
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
