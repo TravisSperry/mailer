@@ -7,7 +7,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-          <h1>ENRICH. columbus</h1>
+          <%= image_tag('enrichcolumbus_text.png', size: '738x72', alt: "enrich.Columbus", class: "hidden-sm hidden-xs") %>
+          <%= image_tag('enrichcolumbus_text.png', size: '369x36', alt: "enrich.Columbus", class: "hidden-md hidden-lg") %>
           <h3>Access to Central Ohio's finest list of enrichment activities for kids and young adults.</h3>
           <% if Time.now < Time.parse("2014-05-15")%>
             <h4 style="color:white;">First Newsletter Takes Off May 2014!</h4>
@@ -16,22 +17,27 @@
           </div>
       </div>
       <div class="row">
-        <div class="bottom_line center">
+        <div class="center">
           <div class="home_page_form">
             <%= render "contacts/form" %>
           </div>
-        </div>
-      </div>
-    </br>
-      <div class="row">
-        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-          <h2>One Email. Once A Month. Tons of Great Stuff.</h1>
         </div>
       </div>
     </div>
   </div>
 </div>
 <!-- /Full Page Image Header Area -->
+<!-- Intro -->
+<div id="about" class="intro bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <h2>One email. Once a month. Tons of great stuff.</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Intro -->
 
 <!-- Intro -->
 <div id="about" class="intro">
@@ -103,7 +109,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
         <h2>Have some events to share?</h2>
-        <a href="<%= new_event_path %>" class="btn btn-lg btn-warning">Register An Event!</a>
+        <a href="<%= new_event_path %>" class="btn btn-lg btn-yellow">Register An Event!</a>
       </div>
     </div>
   </div>

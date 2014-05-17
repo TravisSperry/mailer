@@ -15,6 +15,9 @@
 @import 'bootstrap';
 @import 'gritter';
 
+$niceGray:#c2c2c2;
+$mellowYellow:#f9ed68;
+
 .alert{
   margin-top: 50px;
   position: absolute;
@@ -125,4 +128,16 @@ a {
   a:hover{
     color: #666666;
   }
+}
+
+.btn-gray {
+  @extend .btn-default;
+  background-color: $niceGray;
+  // more stuff
+}
+
+.btn-yellow {
+  @extend .btn-default;
+  background-color: $mellowYellow;
+  // more stuff
 }
