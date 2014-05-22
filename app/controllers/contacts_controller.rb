@@ -17,19 +17,21 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
 
-      respond_to do |format|
-    if @contact.save
-      result = PonyExpress.registration_confirmation(@contact).deliver
-      format.html { redirect_to root_url, notice: 'You have been added to the list :)' }
-      format.json { render json: @contact, status: :created, location: @contact }
-    else
-      format.html { render template: "pages/home" }
-      format.json { render json: @contact.errors, status: :unprocessable_entity }
+    respond_to do |format|
+      if @contact.save
+        result = PonyExpress.registration_confirmation(@contact).deliver
+        format.html { redirect_to root_url, notice: 'You have been added to the list :)' }
+        format.json { render json: @contact, status: :created, location: @contact }
+      else
+        format.html { render template: "pages/home" }
+        format.json { render json: @contact.errors, status: :unprocessable_entity }
+      end
     end
   end
 
+  def opt_out
+      @contact = Contact.find(params[:id])
   end
-
 
   def edit
     @contact = Contact.find(params[:id])
@@ -37,7 +39,6 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
-s
     if @contact.update_attributes(contact_params)
       redirect_to @contact, :notice  => "Successfully updated contact."
     else
@@ -49,6 +50,15 @@ s
     @contact = Contact.find(params[:id])
     @contact.destroy
     redirect_to contacts_url, :notice => "Successfully destroyed contact."
+  end
+
+  def unsubscribe
+    if contact = Contact.read_access_token(params[:signature])
+      contact.update_attribute :email_opt_in, false
+      render text: "You have been unsubscribed"
+    else
+      render text: "Invalid Link"
+    end
   end
 
   private

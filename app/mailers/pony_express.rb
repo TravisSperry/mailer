@@ -12,6 +12,15 @@ class PonyExpress < PostageApp::Mailer
       )
   end
 
+  def monthly_mailer(contact)
+    @contact = contact
+
+    mail(
+      subject: "Test Email",
+      to: "#{contact.email}"
+      )
+  end
+
   def event_registration_confirmation(registration)
     @registration = registration
     mail(

@@ -16,6 +16,8 @@ Mailer::Application.routes.draw do
 
   resources :contacts
 
+  get '/contacts/unsubscribe/:signature' => 'contacts#unsubscribe', as: 'unsubscribe'
+
   root :to => 'pages#home'
 
   get '/mathfestival', to: 'registrations#new'

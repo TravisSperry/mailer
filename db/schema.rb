@@ -9,37 +9,32 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140331174928) do
+ActiveRecord::Schema.define(version: 20140522164600) do
 
-  create_table "admins", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+  create_table "admins", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",          default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
-  add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
-  add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
-  create_table "contacts", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+# Could not dump table "contacts" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
-  create_table "events", :force => true do |t|
+  create_table "events", force: true do |t|
     t.string   "title"
     t.string   "contact"
     t.string   "phone"
@@ -49,8 +44,8 @@ ActiveRecord::Schema.define(:version => 20140331174928) do
     t.string   "zip"
     t.text     "description"
     t.string   "cost"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.date     "date"
     t.string   "organization"
     t.boolean  "approved"
@@ -58,23 +53,23 @@ ActiveRecord::Schema.define(:version => 20140331174928) do
     t.string   "email"
   end
 
-  create_table "parents", :force => true do |t|
+  create_table "parents", force: true do |t|
     t.integer  "registration_id"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "role"
     t.string   "email"
     t.string   "volunteer"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  create_table "registrations", :force => true do |t|
+  create_table "registrations", force: true do |t|
     t.integer  "event_id"
     t.string   "school_name"
     t.integer  "student_count"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.text     "comment"
     t.boolean  "volunteer"
     t.boolean  "fee_waiver"
@@ -87,14 +82,14 @@ ActiveRecord::Schema.define(:version => 20140331174928) do
     t.boolean  "cosi_member"
   end
 
-  create_table "students", :force => true do |t|
+  create_table "students", force: true do |t|
     t.integer  "registration_id"
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "grade"
     t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
