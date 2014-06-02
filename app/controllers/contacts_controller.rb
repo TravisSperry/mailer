@@ -3,7 +3,13 @@ class ContactsController < ApplicationController
   before_filter :authenticate_admin!, :except => [:new, :create]
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.order(:id)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @contacts }
+      format.csv { send_data @contacts.to_csv }
+    end
   end
 
   def show
@@ -59,6 +65,11 @@ class ContactsController < ApplicationController
     else
       render text: "Invalid Link"
     end
+  end
+
+  def import
+    Contact.import(params[:file])
+    redirect_to contacts_path, notice: "Contacts imported."
   end
 
   private

@@ -26,6 +26,23 @@ class Contact < ActiveRecord::Base
     nil
   end
 
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      contact = find_by_id(row["id"]) || new
+      contact.attributes = row.to_hash.slice(*accessible_attributes)
+      contact.save!
+    end
+  end
+
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |contact|
+        csv << contact.attributes.values_at(*column_names)
+      end
+    end
+  end
+
   # Class method for token generation
   def self.create_access_token(user)
     verifier.generate(user.id)

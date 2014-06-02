@@ -14,7 +14,9 @@ Mailer::Application.routes.draw do
 
   resources :events
 
-  resources :contacts
+  resources :contacts do
+    collection { post :import }
+  end
 
   get '/contacts/unsubscribe/:signature' => 'contacts#unsubscribe', as: 'unsubscribe'
 

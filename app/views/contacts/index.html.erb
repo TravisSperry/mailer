@@ -1,6 +1,12 @@
 <div class="container">
   <% title "Contacts" %>
 
+
+    <p>
+      Download:
+      <%= link_to "CSV", contacts_path(format: "csv") %>
+    </p>
+
   <table class="datatable">
     <thead>
       <tr>
@@ -23,6 +29,13 @@
       <% end %>
     </tbody>
   </table>
+  <p>
+    <h3>Import Contacts</h3>
+      <%= form_tag import_contacts_path, multipart: true do %>
+        <%= file_field_tag :file %><br />
+        <%= submit_tag "Import", class: 'btn btn-sm btn-default' %>
+      <% end %>
+  </p>
 
   <p><%= link_to "New Contact", new_contact_path, class: "btn btn-lg btn-success" %></p>
 </div>
