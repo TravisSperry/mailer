@@ -43,6 +43,10 @@ class Contact < ActiveRecord::Base
     end
   end
 
+  def accessible_attributes
+   ["first_name", "last_name", "email"]
+  end
+
   # Class method for token generation
   def self.create_access_token(user)
     verifier.generate(user.id)
