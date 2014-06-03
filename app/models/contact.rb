@@ -2,7 +2,11 @@ class Contact < ActiveRecord::Base
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
-  validates :email, :format => { :with => /\A\S+@\S+\.\S+\z/ }, :allow_blank => false, :presence => true
+  validates :email, :format => { :with => /\A\S+@\S+\.\S+\z/ }, :allow_blank => false, :presence => true, :uniqueness => true
+
+  def self.accessible_attributes
+   ["first_name", "last_name", "email"]
+  end
 
   def name
     first_name + " " + last_name
@@ -30,7 +34,11 @@ class Contact < ActiveRecord::Base
     CSV.foreach(file.path, headers: true) do |row|
       contact = find_by_id(row["id"]) || new
       contact.attributes = row.to_hash.slice(*accessible_attributes)
-      contact.save!
+      begin
+        contact.save!
+      rescue ActiveRecord::RecordInvalid => e
+        false
+      end
     end
   end
 
@@ -41,10 +49,6 @@ class Contact < ActiveRecord::Base
         csv << contact.attributes.values_at(*column_names)
       end
     end
-  end
-
-  def accessible_attributes
-   ["first_name", "last_name", "email"]
   end
 
   # Class method for token generation
