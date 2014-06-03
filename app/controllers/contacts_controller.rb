@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
 
-  before_filter :authenticate_admin!, :except => [:new, :create]
+  before_filter :authenticate_admin!, :except => [:new, :create, :unsubscribe]
 
   def index
     @contacts = Contact.order(:id)
