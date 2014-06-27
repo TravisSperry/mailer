@@ -1,5 +1,6 @@
 class MailerEventsController < ApplicationController
   before_action :set_mailer_event, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /mailer_events
   def index
