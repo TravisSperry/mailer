@@ -1,0 +1,2 @@
+module MailerEventsHelper
+end

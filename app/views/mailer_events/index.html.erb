@@ -1,0 +1,33 @@
+<h1>Listing mailer_events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Company</th>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mailer_events.each do |mailer_event| %>
+      <tr>
+        <td><%= mailer_event.name %></td>
+        <td><%= mailer_event.company %></td>
+        <td><%= mailer_event.date %></td>
+        <td><%= mailer_event.description %></td>
+        <td><%= mailer_event.link %></td>
+        <td><%= link_to 'Show', mailer_event %></td>
+        <td><%= link_to 'Edit', edit_mailer_event_path(mailer_event) %></td>
+        <td><%= link_to 'Destroy', mailer_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mailer event', new_mailer_event_path %>

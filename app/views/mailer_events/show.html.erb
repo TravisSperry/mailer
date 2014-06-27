@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mailer_event.name %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @mailer_event.company %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @mailer_event.date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mailer_event.description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @mailer_event.link %>
+</p>
+
+<%= link_to 'Edit', edit_mailer_event_path(@mailer_event) %> |
+<%= link_to 'Back', mailer_events_path %>

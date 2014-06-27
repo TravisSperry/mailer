@@ -1,5 +1,7 @@
 Mailer::Application.routes.draw do
 
+  resources :mailer_events
+
   resources :students
 
   resources :parents
