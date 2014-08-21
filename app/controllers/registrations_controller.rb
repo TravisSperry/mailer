@@ -2,8 +2,6 @@ class RegistrationsController < ApplicationController
 
   before_filter :authenticate_admin!, :except => [:new, :create, :show]
 
-  force_ssl
-
   # GET /registrations
   # GET /registrations.json
   def index
