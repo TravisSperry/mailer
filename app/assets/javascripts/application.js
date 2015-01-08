@@ -1,6 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery-ui
 //= require date
 //= require chosen-jquery
 //= require jquery.remotipart
@@ -8,7 +8,7 @@
 //= require init
 //= require jquery.html5-placeholder-shim
 //= require dataTables/jquery.dataTables
-//= require dataTables/jquery.dataTables.bootstrap3
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require underscore
 //= require gritter
 //= require bootstrap

@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails', '4.1'
-gem 'sqlite3', :group => :development
-gem 'pg', :group => :production
+gem 'sqlite3', group: :development
+gem 'pg', group: :production
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,8 +20,8 @@ gem "therubyracer"
 gem "compass-rails"
 gem "will_paginate"
 gem "bootstrap-will_paginate"
-gem "letter_opener", :group => :development
-gem "nifty-generators", :group => :development
+gem "letter_opener", group: :development
+gem "nifty-generators", group: :development
 gem "whenever", :require => false
 gem "ranked-model"
 gem "underscore-rails"
@@ -39,5 +39,5 @@ gem "mail"
 gem "devise"
 gem "stripe"
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
-gem "mocha", :group => :test
+gem "mocha", group: :test
 gem "rails_12factor", group: :production
