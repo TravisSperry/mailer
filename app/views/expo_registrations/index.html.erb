@@ -1,0 +1,31 @@
+<h1>Listing expo_registrations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Year</th>
+      <th>Newsletter</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expo_registrations.each do |expo_registration| %>
+      <tr>
+        <td><%= expo_registration.name %></td>
+        <td><%= expo_registration.email %></td>
+        <td><%= expo_registration.year %></td>
+        <td><%= expo_registration.newsletter %></td>
+        <td><%= link_to 'Show', expo_registration %></td>
+        <td><%= link_to 'Edit', edit_expo_registration_path(expo_registration) %></td>
+        <td><%= link_to 'Destroy', expo_registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Expo registration', new_expo_registration_path %>

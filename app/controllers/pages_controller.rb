@@ -10,5 +10,6 @@ class PagesController < ApplicationController
   end
 
   def camp_expo
+    @expo_registration = ExpoRegistration.new
   end
 end

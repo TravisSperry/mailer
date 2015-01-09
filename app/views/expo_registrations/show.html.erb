@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @expo_registration.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @expo_registration.email %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @expo_registration.year %>
+</p>
+
+<p>
+  <strong>Newsletter:</strong>
+  <%= @expo_registration.newsletter %>
+</p>
+
+<%= link_to 'Edit', edit_expo_registration_path(@expo_registration) %> |
+<%= link_to 'Back', expo_registrations_path %>
