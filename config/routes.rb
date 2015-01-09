@@ -26,5 +26,6 @@ Mailer::Application.routes.draw do
 
   get '/mathfestival', to: 'registrations#new'
   get '/CORIinvitational', to: 'pages#robotics'
+  get '/expo', to: 'pages#camp_expo'
   get '/email_confirmation', to: 'registrations#email_confirmation'
 end

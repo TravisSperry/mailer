@@ -8,4 +8,7 @@ class PagesController < ApplicationController
 
   def robotics
   end
+
+  def camp_expo
+  end
 end

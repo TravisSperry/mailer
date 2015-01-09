@@ -34,7 +34,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
-        <h2>One email. Once a month. Tons of great stuff.</h2>
+        <h2>One email. Once a month. <br> Tons of great stuff.</h2>
       </div>
     </div>
   </div>
@@ -111,7 +111,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3 text-center">
         <h2>Have some events to share?</h2>
-        <a href="<%= new_event_path %>" class="btn btn-lg btn-default">Register An Event!</a>
+        <h2><%= mail_to "events@enrichcolumbus.org", "Tell us about them!" %></h2>
       </div>
     </div>
   </div>
