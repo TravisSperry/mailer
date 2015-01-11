@@ -41,3 +41,5 @@ gem "stripe"
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem "mocha", group: :test
 gem "rails_12factor", group: :production
+gem 'dragonfly', '~> 1.0.7'
+gem 'rqrcode_png'
