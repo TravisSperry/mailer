@@ -1,5 +1,8 @@
 class ExpoRegistrationsController < ApplicationController
-  before_action :set_expo_registration, only: [:show, :edit, :update, :destroy]
+
+  before_filter :authenticate_admin!, :only => [:index, :show, :check_in, :edit]
+
+  before_action :set_expo_registration, only: [:show, :edit, :update, :destroy, :check_in]
 
   respond_to :html
 
@@ -24,7 +27,8 @@ class ExpoRegistrationsController < ApplicationController
     @expo_registration = ExpoRegistration.new(expo_registration_params)
     respond_to do |format|
       if @expo_registration.save
-        # result = PonyExpress.registration_confirmation(@contact).deliver
+        @expo_registration.add_qr #adds qr_code image to reg record
+        result = PonyExpress.expo_registration_confirmation(@expo_registration).deliver #send confirmation email
         format.html { redirect_to root_url, notice: 'You have been registered for the Dublin Summer Camp Expo :)' }
         format.json { render json: @expo_registration, status: :created, location: @expo_registration }
       else
@@ -44,12 +48,22 @@ class ExpoRegistrationsController < ApplicationController
     respond_with(@expo_registration)
   end
 
+  def check_in
+    if !(@expo_registration.checked_in)
+      if @expo_registration.update_attributes checked_in: true, checked_in_at: Date.today
+        redirect_to root_url, notice: "This person has checked in!"
+      end
+    else
+      redirect_to root_url, flash: { error: "This person has already checked in!"}
+    end
+  end
+
   private
     def set_expo_registration
       @expo_registration = ExpoRegistration.find(params[:id])
     end
 
     def expo_registration_params
-      params.require(:expo_registration).permit(:name, :email, :year, :newsletter)
+      params.require(:expo_registration).permit(:name, :email, :year, :newsletter, :qr_code, :qr_code_uid)
     end
 end

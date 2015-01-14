@@ -54,6 +54,9 @@ Mailer::Application.configure do
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 
+  # Enable rack cache
+  config.action_dispatch.rack_cache = true
+
   # Enable threaded mode
   # config.threadsafe!
 

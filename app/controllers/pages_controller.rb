@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @contact = Contact.new
-    @registrations = Registration.all
+    @expo_registrations = ExpoRegistration.all
     @contacts = Contact.all
   end
 

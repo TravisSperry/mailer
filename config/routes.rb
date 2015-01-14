@@ -30,4 +30,5 @@ Mailer::Application.routes.draw do
   get '/CORIinvitational', to: 'pages#robotics'
   get '/expo', to: 'pages#camp_expo'
   get '/email_confirmation', to: 'registrations#email_confirmation'
+  get '/check_in', to: 'expo_registrations#check_in'
 end

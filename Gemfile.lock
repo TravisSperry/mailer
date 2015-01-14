@@ -93,6 +93,9 @@ GEM
       addressable (~> 2.3)
       multi_json (~> 1.0)
       rack
+    dragonfly-s3_data_store (1.0.4)
+      dragonfly (~> 1.0)
+      fog
     erubis (2.7.0)
     excon (0.42.1)
     execjs (2.2.2)
@@ -208,6 +211,8 @@ GEM
     postageapp (1.0.24)
       json
     rack (1.5.2)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.0)
@@ -304,6 +309,7 @@ DEPENDENCIES
   country_select
   devise
   dragonfly (~> 1.0.7)
+  dragonfly-s3_data_store
   fog
   font-awesome-sass-rails
   gritter
@@ -318,6 +324,7 @@ DEPENDENCIES
   nifty-generators
   pg
   postageapp
+  rack-cache
   rails (= 4.1)
   rails_12factor
   ranked-model

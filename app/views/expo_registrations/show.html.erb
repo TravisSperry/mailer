@@ -20,5 +20,8 @@
   <%= @expo_registration.newsletter %>
 </p>
 
+
+<%= image_tag(@expo_registration.qr_code.remote_url, size: '200') if @expo_registration.qr_code && @expo_registration.qr_code.remote_url %>
+
 <%= link_to 'Edit', edit_expo_registration_path(@expo_registration) %> |
 <%= link_to 'Back', expo_registrations_path %>

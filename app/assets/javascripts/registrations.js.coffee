@@ -5,8 +5,8 @@ jQuery ->
     registration_payment.amountUpdate()
 
   # Add datables to all tables
-  $('.datatable').dataTable
-    sPaginationType: "bootstrap"
+  $('.datatable').DataTable
+    pagingType: 'simple'
 
 
   # Update student count and total when text is enetered in fields

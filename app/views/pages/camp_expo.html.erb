@@ -10,7 +10,7 @@
       <div class="text-center">
         <h1 style="font-size:5em;color:red;margin:0 0 0 0;">February 25th, 2015, 5:30 - 8:00 <small>post meridiem</small></h1>
         <h1 style="font-weight:800;margin:20px 0 20px 0;">@ Dublin Jerome High School</h1>
-        <h3 style="font-weight:800;color:gray;">An evening of awesome summer activities and camps. Parents will be able to discover and investigate summer programs from across the country.</h3>
+        <h3 style="font-weight:800;color:gray;">An awesome showcase of summer activities. Parents will be able to discover and investigate summer programs from across the country.</h3>
       </div>
     </div>
   </div>
@@ -24,6 +24,7 @@
       <%= simple_form_for @expo_registration do |f| %>
         <%= f.input :name %>
         <%= f.input :email %>
+        <%= f.input :newsletter, as: :boolean, label: "Sign me up for the enrich.columbus newsletter!" %>
         <%= f.input :year, as: :hidden, input_html: { value: 1 } %>
         <%= f.submit "Register", class: "btn btn-default", style: "font-weight:800;" %>
       <% end %>

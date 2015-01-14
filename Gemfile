@@ -42,4 +42,6 @@ gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-ra
 gem "mocha", group: :test
 gem "rails_12factor", group: :production
 gem 'dragonfly', '~> 1.0.7'
+gem 'dragonfly-s3_data_store'
 gem 'rqrcode_png'
+gem 'rack-cache', :require => 'rack/cache', group: :production
