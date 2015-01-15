@@ -1,5 +1,7 @@
 Mailer::Application.routes.draw do
 
+  resources :vendor_registrations
+
   resources :expo_registrations
 
   resources :mailer_events

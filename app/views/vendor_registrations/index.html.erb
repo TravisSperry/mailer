@@ -1,0 +1,49 @@
+<h1>Listing vendor_registrations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Organization name</th>
+      <th>Contact</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Phone</th>
+      <th>Ages</th>
+      <th>Registration fee</th>
+      <th>Late fee</th>
+      <th>Ad fee</th>
+      <th>Total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vendor_registrations.each do |vendor_registration| %>
+      <tr>
+        <td><%= vendor_registration.organization_name %></td>
+        <td><%= vendor_registration.contact %></td>
+        <td><%= vendor_registration.email %></td>
+        <td><%= vendor_registration.address %></td>
+        <td><%= vendor_registration.city %></td>
+        <td><%= vendor_registration.state %></td>
+        <td><%= vendor_registration.zip %></td>
+        <td><%= vendor_registration.phone %></td>
+        <td><%= vendor_registration.ages %></td>
+        <td><%= vendor_registration.registration_fee %></td>
+        <td><%= vendor_registration.late_fee %></td>
+        <td><%= vendor_registration.ad_fee %></td>
+        <td><%= vendor_registration.total %></td>
+        <td><%= link_to 'Show', vendor_registration %></td>
+        <td><%= link_to 'Edit', edit_vendor_registration_path(vendor_registration) %></td>
+        <td><%= link_to 'Destroy', vendor_registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vendor registration', new_vendor_registration_path %>

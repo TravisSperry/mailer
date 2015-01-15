@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Organization name:</strong>
+  <%= @vendor_registration.organization_name %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @vendor_registration.contact %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @vendor_registration.email %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @vendor_registration.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @vendor_registration.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @vendor_registration.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @vendor_registration.zip %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @vendor_registration.phone %>
+</p>
+
+<p>
+  <strong>Ages:</strong>
+  <%= @vendor_registration.ages %>
+</p>
+
+<p>
+  <strong>Registration fee:</strong>
+  <%= @vendor_registration.registration_fee %>
+</p>
+
+<p>
+  <strong>Late fee:</strong>
+  <%= @vendor_registration.late_fee %>
+</p>
+
+<p>
+  <strong>Ad fee:</strong>
+  <%= @vendor_registration.ad_fee %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @vendor_registration.total %>
+</p>
+
+<%= link_to 'Edit', edit_vendor_registration_path(@vendor_registration) %> |
+<%= link_to 'Back', vendor_registrations_path %>

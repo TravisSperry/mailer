@@ -1,0 +1,86 @@
+<div class="row expo">
+  <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <%= simple_form_for(@vendor_registration) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :year, as: :hidden, input_html: { value: 1 } %>
+        <%= f.input :organization_name, input_html: { style: "font-weight:800"} %>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <%= f.input :contact, input_html: { style: "font-weight:800"} %>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <%= f.input :email, input_html: { style: "font-weight:800"} %>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <%= f.input :address, input_html: { style: "font-weight:800"} %>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <%= f.input :city, input_html: { style: "font-weight:800"} %>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <%= f.input :state, input_html: { style: "font-weight:800"} %>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <%= f.input :zip, input_html: { style: "font-weight:800"} %>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <%= f.input :phone, input_html: { style: "font-weight:800"} %>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <%= f.input :ages, input_html: { style: "font-weight:800"} %>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+        <%= f.input :registration_fee, label: "Registration Fee ($70)" %>
+        <%= f.input :late_fee, label: "Late Fee ($20)", input_html: { disabled: true, checked: true } if Date.today >= Date.parse('2015/02/10') %>
+        <%= f.input :ad_fee, label: "Registration Fee ($20)" %>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 pull-right">
+        <%= f.input :total, input_html: { style: "font-weight:800;color:red;", disabled: true} %>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <%= f.button :submit,"Add Registration", class: 'btn btn-lg btn-default bold' %>
+    </div>
+      <% end %>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+    <h3>Payment Information</h3>
+
+    <div id="cc_field" class="form-group string optional">
+      <%= label_tag :card_number, "Credit Card Number", class: "string optional bold" %>
+      <%= text_field_tag :card_number, nil, name: nil, class: "form-control bold" %>
+    </div>
+    <div id="code_field" class="form-group">
+      <%= label_tag :card_code, "Security Code on Card (CVC)", class: "bold" %>
+      <%= text_field_tag :card_code, nil, name: nil, class: "form-control bold" %>
+    </div>
+    <div id="exp_field" class="form-group">
+      <%= label_tag :card_month, "Card Expiration", class: "bold" %>
+      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", class: "form-control bold"} %>
+    </br>
+    <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", class: "form-control bold"} %>
+    <%# end %>
+    <div id="stripe_error">
+      <noscript>
+        JavaScript is not enabled and is required for this form. You can enable JavaScript in your browser settings. Or call (614) 792-6284 to register over the phone.
+      </noscript>
+    </div>
+    </br>
+    <div id="coupon_total">
+      <p>
+        <b></b> <span></span>
+      </p>
+    </div>
+    <div id="registration_subtotal">
+        <b>Subtotal:</b> <span class="pull-right">$0.00</span>
+    </div>
+    <div id="registration_discount">
+        <b></b> <span class="pull-right"></span>
+    </div>
+    <div id="registration_total">
+      <p>
+        <b>Total:</b> <span class="pull-right">$0.00</span>
+      </p>
+    </div>
+  </div>
+</div>
