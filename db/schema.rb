@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115181333) do
+ActiveRecord::Schema.define(version: 20150116162408) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -132,6 +132,10 @@ ActiveRecord::Schema.define(version: 20150115181333) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "year"
+    t.string   "vendor_stripe_card_token"
+    t.string   "stripe_charge_token"
+    t.boolean  "pay_by_check",             default: false
+    t.boolean  "paid",                     default: false
   end
 
 end

@@ -63,7 +63,7 @@ class RegistrationsController < ApplicationController
   def create
     @registration = Registration.new(registration_params)
 
-    if @registration.fee_waiver?
+    if @registration.pay_by_check?
       #process registration without fee
       respond_to do |format|
         if @registration.save_without_payment

@@ -37,6 +37,14 @@ class PonyExpress < PostageApp::Mailer
       )
   end
 
+  def vendor_registration_confirmation(vendor_registration)
+    @vendor_registration = vendor_registration
+    mail(
+      subject: "Vendor Registration Confirmation",
+      to: "#{vendor_registration.email}"
+      )
+  end
+
   def event_email(email)
     mail(
       to: "#{email}",

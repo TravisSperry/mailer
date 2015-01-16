@@ -22,8 +22,38 @@ class VendorRegistrationsController < ApplicationController
 
   def create
     @vendor_registration = VendorRegistration.new(vendor_registration_params)
-    @vendor_registration.save
-    respond_with(@vendor_registration)
+
+    if @vendor_registration.pay_by_check?
+      #process registration without fee
+      respond_to do |format|
+        if @vendor_registration.save_without_payment
+          result = PonyExpress.vendor_registration_confirmation(@vendor_registration).deliver
+          format.html { redirect_to root_path, notice: 'Registration was successfully created. You will receive an email confirmation with instructions on paying by check.' }
+          format.json { render json: @vendor_registration, status: :created, location: @vendor_registration }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @vendor_registration.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      #STRIPE save_with_payment
+      respond_to do |format|
+        if @vendor_registration.save_with_payment
+          result = PonyExpress.vendor_registration_confirmation(@vendor_registration).deliver
+          format.html { redirect_to root_path, notice: 'Registration was successfully created.' }
+          format.json { render json: @vendor_registration, status: :created, location: @vendor_registration }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @vendor_registration.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
+    rescue Stripe::CardError => e
+      redirect_to new_vendor_registration_path , alert: e.message + " Please complete your registration with a valid credit card."
+
+    rescue Stripe::InvalidRequestError => e
+      redirect_to new_vendor_registration_path , alert: e.message + " Please complete your registration with a valid credit card."
   end
 
   def update
@@ -42,6 +72,6 @@ class VendorRegistrationsController < ApplicationController
     end
 
     def vendor_registration_params
-      params.require(:vendor_registration).permit(:organization_name, :contact, :email, :address, :city, :state, :zip, :phone, :ages, :registration_fee, :late_fee, :ad_fee, :total)
+      params.require(:vendor_registration).permit(:organization_name, :contact, :email, :address, :city, :state, :zip, :phone, :ages, :registration_fee, :late_fee, :ad_fee, :total, :vendor_stripe_card_token, :year, :pay_by_check)
     end
 end
