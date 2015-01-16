@@ -1,4 +1,4 @@
-<div class="row expo">
+<div class="row expo" style="margin-top:0;">
   <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <%= simple_form_for(@vendor_registration) do |f| %>
@@ -32,10 +32,10 @@
         <%= f.input :ages, placeholder: "What age groups do you activies target?", input_html: { style: "font-weight:800"} %>
     </div>
     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-      If you would like to be included in a full color glossy ad that will be distributed to all attendees please select the
+      <u><b>If you would like to be included in a full color glossy ad that will be distributed to all attendees please select the ad fee. Below is a link to a sample of what will be distributed.</b></u>
         <%= f.input :registration_fee, label: "Registration Fee ($70)" %>
         <%= f.input :late_fee, label: "Late Fee ($20)", input_html: { disabled: true, checked: true } if Date.today >= Date.parse('2015/02/10') %>
-        <%= f.input :ad_fee, label: "Registration Fee ($20)" %>
+        <%= f.input :ad_fee, label: "Ad Fee ($20)" %><span> <%= link_to "Sample Ad", "https://s3.amazonaws.com/enrichcolumbus/ad_sample.pdf", target: "_blank" %> </span>
     </div>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">

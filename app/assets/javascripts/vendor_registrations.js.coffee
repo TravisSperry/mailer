@@ -62,21 +62,25 @@ registration_payment =
   setupForm: ->
     $('#new_vendor_registration').submit ->
       $('input[type=submit]').attr('disabled', true)
-      if $('#vendor_registration_pay_by_check').is(':checked')
-        true
+      if parseInt($('#vendor_registration_total').val()) < 70
+        alert 'You do not have any fees selected or you have not selected the registration fee. You must at least select the registration fee.'
+        $('input[type=submit]').attr('disabled', false)
+        false
       else
-        if $('#card_number').val()
-            registration_payment.processCard()
-            false
-          else if not $('#card_number').val() and $('#vendor_registration_vendor_stripe_card_token').val()
-            true
-          else
-            alert "You have not entered a credit card."
-            $('input[type=submit]').attr('disabled', false)
-            false
+        if $('#vendor_registration_pay_by_check').is(':checked')
+          true
+        else
+          if $('#card_number').val()
+              registration_payment.processCard()
+              false
+            else if not $('#card_number').val() and $('#vendor_registration_vendor_stripe_card_token').val()
+              true
+            else
+              alert "You have not entered a credit card."
+              $('input[type=submit]').attr('disabled', false)
+              false
 
   processCard: ->
-    alert $('#card_number').val()
     card =
       name: $('#vendor_registration_email').val()
       number: $('#card_number').val()
