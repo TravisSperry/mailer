@@ -1,34 +1,35 @@
+<div class="container">
+  <% title "Vendor Registrations" %>
 
-<% title "Vendor Registrations" %>
-
-<table class="datatable">
-  <thead>
-    <tr>
-      <th>Organization name</th>
-      <th>Contact</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Total</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @vendor_registrations.each do |vendor_registration| %>
-      <tr <%= vendor_registration.paid? ? "style=background:#c19583;" : "" %>>
-        <td><%= vendor_registration.organization_name %></td>
-        <td><%= vendor_registration.contact %></td>
-        <td><%= vendor_registration.email %></td>
-        <td><%= vendor_registration.phone %></td>
-        <td><%= vendor_registration.total %></td>
-        <td><%= link_to 'Show', vendor_registration %></td>
-        <td><%= link_to 'Edit', edit_vendor_registration_path(vendor_registration) %></td>
-        <td><%= link_to 'Destroy', vendor_registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <table class="datatable" class="display" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>Organization name</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Total</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @vendor_registrations.each do |vendor_registration| %>
+        <tr <%= vendor_registration.paid? ? "" : "style=background:#ffc6af;" %>>
+          <td><%= vendor_registration.organization_name %></td>
+          <td><%= vendor_registration.contact %></td>
+          <td><%= vendor_registration.email %></td>
+          <td><%= vendor_registration.phone %></td>
+          <td><%= vendor_registration.total %></td>
+          <td><%= link_to 'Show', vendor_registration %></td>
+          <td><%= link_to 'Edit', edit_vendor_registration_path(vendor_registration) %></td>
+          <td><%= link_to 'Destroy', vendor_registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Vendor registration', new_vendor_registration_path %>
+  <br>
+
+  <%= link_to 'New Vendor registration', new_vendor_registration_path %>
+</div>
