@@ -1,4 +1,7 @@
 class VendorRegistrationsController < ApplicationController
+
+  before_filter :authenticate_admin!, :only => [:index, :show, :edit]
+
   before_action :set_vendor_registration, only: [:show, :edit, :update, :destroy]
 
   respond_to :html

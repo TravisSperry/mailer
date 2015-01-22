@@ -13,7 +13,11 @@
       <h1>DSCE15</h1>
     </div>
     <div class="panel_body">
-      <h3><%= @expo_registrations.count %></h3>
+      <h3>
+        <%= link_to(expo_registrations_path) do %>
+          <%= @expo_registrations.count %>
+        <% end %>
+      </h3>
     </div>
   </div>
   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
