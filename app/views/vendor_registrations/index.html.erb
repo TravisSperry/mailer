@@ -15,7 +15,7 @@
 
   <tbody>
     <% @vendor_registrations.each do |vendor_registration| %>
-      <tr>
+      <tr <%= vendor_registration.paid? ? "style=background:#c19583;" : "" %>>
         <td><%= vendor_registration.organization_name %></td>
         <td><%= vendor_registration.contact %></td>
         <td><%= vendor_registration.email %></td>
