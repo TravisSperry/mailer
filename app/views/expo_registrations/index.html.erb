@@ -8,7 +8,8 @@
         <th>Email</th>
         <th>Year</th>
         <th>Newsletter</th>
-        <th colspan="3"></th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
 
@@ -21,7 +22,6 @@
           <td><%= expo_registration.newsletter %></td>
           <td><%= link_to 'Show', expo_registration %></td>
           <td><%= link_to 'Edit', edit_expo_registration_path(expo_registration) %></td>
-          <td><%= link_to 'Destroy', expo_registration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
