@@ -54,6 +54,15 @@ class PonyExpress < PostageApp::Mailer
       )
   end
 
+  def vendor_follow_up(vendor_registration)
+    @vendor_registration = vendor_registration
+    attachments['dsce15_flyer.pdf'] = File.read('app/assets/forms/dsce15_flyer.pdf')
+    mail(
+      subject: "Expo Follow Up -- Please Read!",
+      to: "#{vendor_registration.email}"
+      )
+  end
+
   def event_email(email)
     mail(
       to: "#{email}",
