@@ -35,6 +35,15 @@ class PonyExpress < PostageApp::Mailer
       subject: "Expo Registration Confirmation",
       to: "#{expo_registration.email}"
       )
+    @expo_registration.update_attribute(:follow_up, true)
+  end
+
+  def expo_registration_follow_up(expo_registration)
+    @expo_registration = expo_registration
+    mail(
+      subject: "The Expo Is Coming! Please Read!",
+      to: "#{expo_registration.email}"
+      )
   end
 
   def vendor_registration_confirmation(vendor_registration)

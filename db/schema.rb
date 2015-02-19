@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116162408) do
+ActiveRecord::Schema.define(version: 20150219161153) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150116162408) do
     t.string   "qr_code_uid"
     t.boolean  "checked_in",    default: false
     t.date     "checked_in_at"
+    t.boolean  "follow_up",     default: false
   end
 
   create_table "mailer_events", force: true do |t|
