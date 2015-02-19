@@ -6,7 +6,7 @@ jQuery ->
     $('#vendor_registration_total').val(0)
     $('#final_total').val(0)
   else
-    $('#vendor_registration_total').val(20)
+    $('#vendor_registration_total').val(0)
     $('#final_total').val(0)
 
   if $("input[name='vendor_registration[registration_fee]']").is(':checked')
