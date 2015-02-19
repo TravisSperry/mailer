@@ -7,8 +7,13 @@ class VendorRegistrationsController < ApplicationController
   respond_to :html
 
   def index
-    @vendor_registrations = VendorRegistration.all
-    respond_with(@vendor_registrations)
+    @vendor_registrations = VendorRegistration.order(:id)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @vendor_registrations }
+      format.csv { send_data @vendor_registrations.to_csv }
+    end
   end
 
   def show
@@ -67,6 +72,11 @@ class VendorRegistrationsController < ApplicationController
   def destroy
     @vendor_registration.destroy
     respond_with(@vendor_registration)
+  end
+
+  def import
+    VendorRegistration.import(params[:file])
+    redirect_to vendor_registrations_path, notice: "Vendor Registrations imported."
   end
 
   private

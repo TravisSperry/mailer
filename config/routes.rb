@@ -1,6 +1,8 @@
 Mailer::Application.routes.draw do
 
-  resources :vendor_registrations
+  resources :vendor_registrations do
+    collection { post :import }
+  end
 
   resources :expo_registrations
 
