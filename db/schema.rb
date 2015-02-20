@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219161153) do
+ActiveRecord::Schema.define(version: 20150220213901) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 20150219161153) do
     t.integer  "event_id"
     t.string   "school_name"
     t.integer  "student_count"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.text     "comment"
     t.boolean  "volunteer"
     t.boolean  "fee_waiver"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20150219161153) do
     t.string   "stripe_charge_token"
     t.string   "contact_email"
     t.boolean  "cosi_member"
+    t.integer  "year",                default: 0
   end
 
   create_table "students", force: true do |t|
