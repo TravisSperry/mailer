@@ -7,8 +7,13 @@ class ExpoRegistrationsController < ApplicationController
   respond_to :html
 
   def index
-    @expo_registrations = ExpoRegistration.all
-    respond_with(@expo_registrations)
+    @expo_registrations = ExpoRegistration.order(:id)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @expo_registrations }
+      format.csv { send_data @expo_registrations.to_csv }
+    end
   end
 
   def show

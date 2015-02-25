@@ -1,6 +1,11 @@
 <div class="container">
   <% title "Expo Registrations" %>
 
+  <p>
+    Download:
+    <%= link_to "CSV", expo_registrations_path(format: "csv") %>
+  </p>
+
   <table class="datatable" class="display" cellspacing="0" width="100%">
     <thead>
       <tr>
