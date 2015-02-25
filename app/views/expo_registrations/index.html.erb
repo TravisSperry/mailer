@@ -4,6 +4,7 @@
   <table class="datatable" class="display" cellspacing="0" width="100%">
     <thead>
       <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>Email</th>
         <th>Year</th>
@@ -16,6 +17,7 @@
     <tbody>
       <% @expo_registrations.each do |expo_registration| %>
         <tr>
+          <td><%= expo_registration.id %></td>
           <td><%= expo_registration.name %></td>
           <td><%= expo_registration.email %></td>
           <td><%= expo_registration.year %></td>
