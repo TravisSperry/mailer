@@ -25,7 +25,7 @@ background-color: #deddd2;
       <br><br>
     </div>
     <div style="text-align:center;" class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-      <iframe src="http://www.youtube.com/embed/Idow6vKyaXg?rel=0" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
+      <iframe src="https://www.youtube.com/embed/Idow6vKyaXg?rel=0" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
     </div>
   </div>
   <br><br>
@@ -124,7 +124,8 @@ background-color: #deddd2;
           <%= f.input :consent, label: false, inline_label: "Children under 18 require consent from parent or guardian to fill out this form. Check this box if you have their consent." %>
         </p>
 
-        <%= f.input :event_id, as: :hidden, input_html: { value: 17 } %>
+        <%= f.input :event_id, as: :hidden, input_html: { value: 17 } if Rails.env.production?  %>
+        <%= f.input :event_id, as: :hidden, input_html: { value: 1 } unless Rails.env.production?  %>
         <%= f.input :student_count, as: :hidden %>
         <%= f.input :stripe_card_token, as: :hidden %>
         <%= f.input :total, as: :hidden %>
