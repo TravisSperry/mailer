@@ -135,6 +135,6 @@ class RegistrationsController < ApplicationController
                                           :event_id, :school_name, :students_attributes,
                                           :parents_attributes, :fee_waiver, :comments, :consent,
                                           :student_count, :total, :stripe_charge_token, :stripe_card_token,
-                                          :contact_email, :cosi_member)
+                                          :contact_email, :cosi_member, :year)
     end
 end
