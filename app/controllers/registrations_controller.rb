@@ -132,9 +132,9 @@ class RegistrationsController < ApplicationController
     # Also, you can specialize this method with per-user checking of permissible attributes.
     def registration_params
       params.require(:registration).permit(
-                                          :event_id, :school_name, :students_attributes,
-                                          :parents_attributes, :fee_waiver, :comments, :consent,
+                                          :event_id, :school_name, :fee_waiver, :comments, :consent,
                                           :student_count, :total, :stripe_charge_token, :stripe_card_token,
-                                          :contact_email, :cosi_member, :year)
+                                          :contact_email, :cosi_member, :year, students_attributes: [:id, :first_name, :last_name, :registration_id, :grade],
+                                          parents_attributes: [:id, :first_name, :last_name, :role, :email, :registration_id, :volunteer])
     end
 end
