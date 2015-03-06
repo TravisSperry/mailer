@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @contact = Contact.new
-    @expo_registrations = ExpoRegistration.all
+    @registrations = Registration.where(year: 1)
     @contacts = Contact.all
   end
 
