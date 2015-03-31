@@ -5,7 +5,7 @@ class RegistrationsController < ApplicationController
   # GET /registrations
   # GET /registrations.json
   def index
-    @registrations = Registration.all
+    @registrations = Registration.where(year: 1)
 
     respond_to do |format|
       format.html # index.html.erb
