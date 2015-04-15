@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @contact = Contact.new
-    if current_user
+    if current_admin
       @registrations = Registration.where(year: 1)
       @contacts = Contact.all
       @jrmf_students_count = Event.find(17).students.count
