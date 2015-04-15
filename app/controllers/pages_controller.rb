@@ -2,8 +2,11 @@ class PagesController < ApplicationController
 
   def home
     @contact = Contact.new
-    @registrations = Registration.where(year: 1)
-    @contacts = Contact.all
+    if current_user
+      @registrations = Registration.where(year: 1)
+      @contacts = Contact.all
+      @jrmf_students_count = Event.find(17).students.count
+    end
   end
 
   def robotics
