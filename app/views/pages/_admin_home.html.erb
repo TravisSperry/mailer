@@ -1,33 +1,35 @@
 <div class="container admin_home">
   <h1>ENRICH Admin</h1>
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 admin_panel">
-    <div class="panel_header">
-      <h1>Total Contacts</h1>
+  <div class='row'>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 admin_panel">
+      <div class="panel_header">
+        <h1>Total Contacts</h1>
+      </div>
+      <div class="panel_body">
+        <h3><%= @contacts.count %></h3>
+      </div>
     </div>
-    <div class="panel_body">
-      <h3><%= @contacts.count %></h3>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 admin_panel">
+      <div class="panel_header">
+        <h1>JRMF</h1>
+      </div>
+      <div class="panel_body">
+        <h3>
+          <%= link_to(registrations_path) do %>
+            <%= @registrations.count %>
+          <% end %>
+        </h3>
+      </div>
     </div>
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 admin_panel">
-    <div class="panel_header">
-      <h1>JRMF</h1>
-    </div>
-    <div class="panel_body">
-      <h3>
-        <%= link_to(registrations_path) do %>
-          <%= @registrations.count %>
-        <% end %>
-      </h3>
-    </div>
-  </div>
-  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-    <div class="panel_header">
-      <h1>JRMF Students</h1>
-    </div>
-    <div class="panel_body">
-      <h3>
-        <%= @jrmf_students_count %>
-      </h3>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 admin_panel">
+      <div class="panel_header">
+        <h1>JRMF Students</h1>
+      </div>
+      <div class="panel_body">
+        <h3>
+          <%= @jrmf_students_count %>
+        </h3>
+      </div>
     </div>
   </div>
 </div>
