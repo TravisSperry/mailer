@@ -54,7 +54,7 @@ class PonyExpress < PostageApp::Mailer
       )
   end
 
-  def jrmf_comming(contact_email)
+  def jrmf_coming(contact_email)
     attachments['jrmf_flyer_2015.pdf'] = File.read('app/assets/forms/jrmf_flyer_2015.pdf')
     mail(
       subject: "The Julia Robinson Mathematics Festival is coming!",
