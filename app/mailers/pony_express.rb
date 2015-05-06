@@ -62,6 +62,14 @@ class PonyExpress < PostageApp::Mailer
       )
   end
 
+  def jrmf_spread_word(contact_email)
+    attachments['jrmf_flyer_2015.pdf'] = File.read('app/assets/forms/jrmf_flyer_2015.pdf')
+    mail(
+      subject: "Spread the word! The best mathematics festival in Columbus.",
+      to: "#{contact_email}"
+      )
+  end
+
   def vendor_registration_confirmation(vendor_registration)
     @vendor_registration = vendor_registration
     mail(
