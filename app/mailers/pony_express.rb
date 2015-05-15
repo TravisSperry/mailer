@@ -70,6 +70,13 @@ class PonyExpress < PostageApp::Mailer
       )
   end
 
+  def jrmf_24hr_reminder(contact_email)
+    mail(
+      subject: "The Julia Robinson Mathematics Festival is Tomorrow!",
+      to: "#{contact_email}"
+      )
+  end
+
   def vendor_registration_confirmation(vendor_registration)
     @vendor_registration = vendor_registration
     mail(
