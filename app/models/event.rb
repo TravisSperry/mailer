@@ -6,11 +6,14 @@ class Event < ActiveRecord::Base
 
 
 
-  def self.registrations_to_csv
+  def registrations_to_csv
     CSV.generate do |csv|
-      csv << column_names
       registrations.each do |registration|
-        csv << registration.attributes.values_at(*column_names)
+        attributes = []
+        attributes << registration.id
+        registration.parents{|parent| attributes << parent.full_name}
+        registration.students{|student| attributes << student.full_name}
+        csv << attributes
       end
     end
   end
