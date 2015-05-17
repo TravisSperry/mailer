@@ -11,8 +11,8 @@ class Event < ActiveRecord::Base
       registrations.each do |registration|
         attributes = []
         attributes << registration.id
-        registration.parents{|parent| attributes << parent.full_name}
-        registration.students{|student| attributes << student.full_name}
+        registration.parents.each{|parent| attributes << parent.full_name}
+        registration.students.each{|student| attributes << student.full_name}
         csv << attributes
       end
     end
