@@ -94,6 +94,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def registrations
+    @event = Event.find(params[:id])
+
+    respond_to do |format|
+      format.csv { send_data @event.registrations_to_csv }
+    end
+  end
+
   private
 
     # Use this method to whitelist the permissible parameters. Example:

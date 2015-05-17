@@ -20,7 +20,9 @@ Mailer::Application.routes.draw do
       put 'admins/:id' => 'devise/registrations#update', :as => 'admin_registration'
     end
 
-  resources :events
+  resources :events do
+    member { get :registrations }
+  end
 
   resources :contacts do
     collection { post :import }
