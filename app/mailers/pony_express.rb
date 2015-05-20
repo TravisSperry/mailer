@@ -77,6 +77,13 @@ class PonyExpress < PostageApp::Mailer
       )
   end
 
+  def jrmf_survey(contact_email)
+    mail(
+      subject: "We would like to hear from you! Julia Robinson Mathematics Festival",
+      to: "#{contact_email}"
+      )
+  end
+
   def vendor_registration_confirmation(vendor_registration)
     @vendor_registration = vendor_registration
     mail(
