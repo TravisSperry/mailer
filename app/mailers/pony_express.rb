@@ -16,7 +16,7 @@ class PonyExpress < PostageApp::Mailer
     @contact = contact
 
     mail(
-      subject: "Enrich Columbus: Monthly Events for June!",
+      subject: "Enrich Columbus: Monthly Events for July!",
       to: "#{contact.email}"
       )
   end
