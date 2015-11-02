@@ -1,23 +1,21 @@
-<%= simple_form_for(@event) do |f| %>
-  <%= f.error_notification %>
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <%= simple_form_for(@event) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title, label: "Event Title" %>
-    <%= f.input :contact, label: "Event Contact" %>
-    <%= f.input :organization %>
-    <%= f.input :date, as: :string %>
-    <%= f.input :description, input_html: { rows: 5 } %>
-    <%= f.input :age, label: "Age Group For Event", hint: "Grades or Ages", placeholder: "i.e. K-5, or 6-12 y.o." %>
-    <%= f.input :phone %>
-    <%= f.input :email, hint: "Email is not published. This is so we can contact you if need be." %>
-    <%= f.input :address, label: "Event Address", placeholder: "Where would someone go to attend this event?" %>
-    <%= f.input :city %>
-    <%= f.input :state %>
-    <%= f.input :zip %>
-    <%= f.input :cost, label: "Event Cost", placeholder: 'How much do you have to pay to attend?' %>
+      <div class="form-inputs">
+        <%= f.association :newsletter, label_method: :name, selected: params[:newsletter_id] if params[:newsletter_id] %>
+          <%= f.association :newsletter, label_method: :name unless params[:newsletter_id] %>
+        <%= f.input :title, label: "Event Title" %>
+        <%= f.input :organization %>
+        <%= f.input :dates, placeholder: "Like 'June 29th, or Multiple June Dates, or June 20th-30th'" %>
+        <%= f.input :description, input_html: { rows: 5 } %>
+        <%= f.input :link, placeholder: 'A website with more information.' %>
+      </div>
+    </br>
+      <div class="form-actions">
+        <%= f.submit "Add Event", class: "btn-lg btn-success" %>
+      </div>
+    <% end %>
   </div>
-</br>
-  <div class="form-actions">
-    <%= f.submit "Add Event", class: "btn-lg btn-success" %>
-  </div>
-<% end %>
+</div>

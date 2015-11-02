@@ -108,8 +108,7 @@ class EventsController < ApplicationController
     # params.require(:person).permit(:name, :age)
     # Also, you can specialize this method with per-user checking of permissible attributes.
     def event_params
-      params.require(:event).permit(:address, :city, :contact, :cost, :description,
-                                    :organization, :phone, :state, :title, :zip, :date,
-                                    :cost, :email, :age)
+      params.require(:event).permit(:description, :organization,:dates,
+                                    :newsletter_id, :link, :title)
     end
 end

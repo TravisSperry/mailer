@@ -1,0 +1,30 @@
+
+<div class="container">
+  <div class="row" style="margin-bottom:40px;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h1><%= Date::MONTHNAMES[@newsletter.month]%> <%= @newsletter.year %> Newsletter</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <% if @newsletter.events.any? %>
+        <% @newsletter.events.each_with_index do |event, i| %>
+          <%= render 'events/event_newsletter_view', event: event %>
+          <hr>
+        <% end %>
+        <%= link_to "Add Another Event", new_event_path(newsletter_id: @newsletter.id), class: "btn btn-success" %>
+      <% else %>
+        <div style='color:red;'>
+          <h3>
+            <strong>It doesn't look like any events have been added to this newsletter.</strong>
+          </h3>
+        </div>
+        <div class="add-event">
+          <h3>You can add an event by clicking the button below.</h3>
+          <br>
+          <%= link_to "Add Event", new_event_path, class: "btn btn-warning" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

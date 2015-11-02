@@ -1,4 +1,4 @@
-require 'postageapp/mailer'
+	require 'postageapp/mailer'
 
 class PonyExpress < PostageApp::Mailer
   default from: "events@enrichcolumbus.org"

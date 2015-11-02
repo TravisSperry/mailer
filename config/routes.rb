@@ -1,5 +1,7 @@
 Mailer::Application.routes.draw do
 
+  resources :newsletters
+
   resources :vendor_registrations do
     collection { post :import }
   end

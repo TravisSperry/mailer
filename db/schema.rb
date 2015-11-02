@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150220213901) do
+ActiveRecord::Schema.define(version: 20151102151452) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -36,21 +36,13 @@ ActiveRecord::Schema.define(version: 20150220213901) do
 
   create_table "events", force: true do |t|
     t.string   "title"
-    t.string   "contact"
-    t.string   "phone"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
     t.text     "description"
-    t.string   "cost"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.date     "date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "organization"
-    t.boolean  "approved"
-    t.string   "age"
-    t.string   "email"
+    t.string   "dates"
+    t.string   "link"
+    t.integer  "newsletter_id"
   end
 
   create_table "expo_registrations", force: true do |t|
@@ -73,6 +65,13 @@ ActiveRecord::Schema.define(version: 20150220213901) do
     t.string   "date"
     t.string   "description"
     t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "newsletters", force: true do |t|
+    t.integer  "month"
+    t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
