@@ -9,11 +9,11 @@ background-color: #deddd2;
 <% end %>
 </br>
 
-<h2>The Ohio State Union: Great Hall &mdash; May 17th, 2015 &mdash; 1pm to 4pm &mdash; Grades 4-10 </h2>
+<h2>Stay tuned for the release of the 2016 Columbus Julia Robinson Mathematics Festival Date!</h2>
 </br>
 
 <div class="description">
-  This mathematics festival is open to students in grades 4-10 and will take place 1:00pm - 4:00pm on Sunday, May 17th, 2014. It will be held at The Ohio Union - Great Hall. <a href="https://ohiounion.osu.edu/visit_the_union/directions" target="_blank">Look here for directions</a>.
+  <!-- This mathematics festival is open to students in grades 4-10 and will take place 1:00pm - 4:00pm on Sunday, May 17th, 2014. It will be held at The Ohio Union - Great Hall. <a href="https://ohiounion.osu.edu/visit_the_union/directions" target="_blank">Look here for directions</a>. -->
   <br><br>
   The event's collaborative, non-competitive atmosphere offers an alternate setting for students to explore the joys and power of mathematics with other kids and older mentors.
   <br><br>
@@ -32,125 +32,4 @@ background-color: #deddd2;
   If you have any questions, please contact us at events@enrichcolumbus.org
 </div>
 
-  <h3>Register to Attend</h3>
-
-<%= simple_nested_form_for @registration, wrapper: false do |f| %>
-
-  <%= f.error_notification %>
-  <div class="row">
-    <div class="col-lg-6">
-      <%= f.input :school_name, label: "School Name or Home School" %>
-    </div>
-    <div class="col-lg-4">
-      <%= f.input :contact_email, label: "Email for confirmation to be sent to..." %>
-    </div>
-  </div>
-</br>
-  <div class="reg_table">
-    <h3>Students</h3>
-    <table class="reg_form" id="students">
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Grade Level</th>
-        <th></th>
-      </tr>
-      <%= f.fields_for :students, wrapper: false do |student_form| %>
-        <tr class="add_student fields">
-          <td><%= student_form.hidden_field :id %><%= student_form.input :first_name, label: false %></td>
-          <td><%= student_form.input :last_name, label: false %></td>
-          <td><%= student_form.input :grade, collection: Student::GRADES, label: false %></td>
-          <td>
-            <%= student_form.link_to_remove do %>
-              <i class="fa fa-times close"></i>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-    <p><%= f.link_to_add "Add a student", :students, :data => { :target => "#students" }, class: "btn btn-xs btn-warning", id: "add_student" %></p>
-  </div>
-  <div class="reg_table">
-    <h3>Parents</h3>
-    <table class="reg_form" id="parents">
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Role</th>
-        <th>Email</th>
-        <th>Volunteer?</th>
-        <th></th>
-      </tr>
-      <%= f.fields_for :parents, wrapper: false do |parent_form| %>
-        <tr style="margin-top:20px;" class="fields">
-          <td><%= parent_form.hidden_field :id %><%= parent_form.input :first_name, label: false %></td>
-          <td><%= parent_form.input :last_name, label: false %></td>
-          <td><%= parent_form.input :role, collection: Parent::ROLES, label: false %></td>
-          <td><%= parent_form.input :email, label: false %></td>
-          <td><%= parent_form.input :volunteer, collection: Parent::VOLUNTEER, label: false %></td>
-          <td>
-            <%= parent_form.link_to_remove do %>
-              <i class="fa fa-times close"></i>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-    <p><%= f.link_to_add "Add a parent", :parents, :data => { :target => "#parents" }, class: "btn btn-xs btn-warning" %></p>
-  </div>
-
-  <div class="row">
-    <div class="col-lg-8">
-    <h2>Payment</h2>
-    <fieldset>
-      <p>The registration fee for this event is $10 PER STUDENT.</p>
-
-      <p>If you are financially unable to pay the registration fee, you may request to have your registration fee waived. Your registration will still be accepted and the students can still attend the event.</p>
-
-      <p><%= f.input :fee_waiver, label: false, inline_label: "Check this box to request a registration fee waiver." %></p>
-
-      <p>
-        Please alert us to any mobility issues, or
-        other special needs we should be aware of.
-        Also feel free to include any comments: <br>
-        <div class="row">
-          <div class="col-lg-7">
-          <%= f.input :comments, label: false, input_html: { rows: 4 } %>
-          </div>
-        </div>
-      </p>
-
-        <p>
-          <%= f.input :consent, label: false, inline_label: "Children under 18 require consent from parent or guardian to fill out this form. Check this box if you have their consent." %>
-        </p>
-
-        <%= f.input :event_id, as: :hidden, input_html: { value: 17 } if Rails.env.production?  %>
-        <%= f.input :event_id, as: :hidden, input_html: { value: 1 } unless Rails.env.production?  %>
-        <%= f.input :student_count, as: :hidden %>
-        <%= f.input :stripe_card_token, as: :hidden %>
-        <%= f.input :total, as: :hidden %>
-        <%= f.input :year, as: :hidden, input_html: { value: 1 } %>
-    </div>
-    <div class="col-lg-4">
-        <%= render 'credit_card_info' %>
-      </br>
-      </br>
-        <%= f.submit "Submit Registration", class: "btn-lg btn-success", id: "submit_registration" %>
-    </div>
-  </div>
-<% end %>
-<hr>
-<div class="sponsors">
-  <h1 style="text-align:center;">Sponsors</h1>
-  </br>
-  </br>
-  <div class="row">
-    <div style="text-align:center;margin-bottom:40px;" class="col-lg-6">
-    </div>
-    <div style="text-align:center;margin-bottom:40px;" class="col-lg-6">
-      <%= link_to("http://www.mathplusacademy.com/") do %>
-        <%= image_tag("Math_Plus-Logo.png", width: "300")%>
-      <% end %>
-    </div>
-  </div>
-</div>
+<%# render 'festival_registration_form' %>
