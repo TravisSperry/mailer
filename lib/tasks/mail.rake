@@ -24,7 +24,7 @@ namespace :mail do
     #args passed to rake task month="March" year=2015 accessed with ENV['month'] etc.
     month = Date::MONTHNAMES.index(ENV['month'].downcase.capitalize)
     year = ENV['year'].to_i
-    newsletter = Newsletter.where(month: month).where(year: 2015).first
+    newsletter = Newsletter.where(month: month).where(year: year).first
 
     if Rails.env.development?
       contact = Contact.find 77
