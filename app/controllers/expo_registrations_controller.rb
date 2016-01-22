@@ -32,7 +32,6 @@ class ExpoRegistrationsController < ApplicationController
     @expo_registration = ExpoRegistration.new(expo_registration_params)
     respond_to do |format|
       if @expo_registration.save
-        @expo_registration.add_qr #adds qr_code image to reg record
         result = PonyExpress.expo_registration_confirmation(@expo_registration).deliver #send confirmation email
         format.html { redirect_to root_url, notice: 'You have been registered for the Dublin Summer Camp Expo :)' }
         format.json { render json: @expo_registration, status: :created, location: @expo_registration }
