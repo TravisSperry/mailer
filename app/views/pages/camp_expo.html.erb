@@ -1,5 +1,5 @@
 
-<div class="container expo">
+<div class="container expo" style="padding-top:5%;">
   <div class="row hidden-lg">
     <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="padding:0 0 40px 0;">
       <%= image_tag('camp_expo_color.png', size: "200") %>
@@ -7,12 +7,12 @@
   </div>
   <div class="row" style="border-bottom:9px solid black;padding:0 0 30px 0;margin:0 0 30px 0;">
     <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3 hidden-md hidden-sm hidden-xs">
-      <%= image_tag('camp_expo_color_thmb.png') %>
+      <%= image_tag('camp_expo_color.png', size: "200") %>
     </div>
     <div class="col-md-12 col-lg-9 col-sm-12 col-xs-12">
       <div class="text-center">
-        <h1 style="font-size:5em;color:red;margin:0 0 0 0;">February 25th, 2015 <br> 5:30 - 8:00 <small>post meridiem</small></h1>
-        <h1 style="font-weight:800;margin:20px 0 20px 0;">@ Dublin Jerome High School</h1>
+        <h1 style="font-size:5em;color:red;margin:0 0 0 0;">March 2nd, 2016 <br> 5:30 - 8:00 <small>post meridiem</small></h1>
+        <h1 style="font-weight:800;margin:20px 0 20px 0;">@ Sells Middle School</h1>
         <h3 style="font-weight:800;color:gray;">An awesome showcase of summer activities. Parents will be able to discover and investigate summer programs from across the country.</h3>
       </div>
     </div>
@@ -23,12 +23,12 @@
     </div>
     <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
       <h1 style="font-weight:800;margin-bottom:0;">REGISTER HERE!</h1>
-      <h1 style="font-weight:800;margin:0 0 20px 0;"><small>First 100 registrants will receive a door prize :)</small></h1>
+      <h1 style="font-weight:800;margin:0 0 20px 0;"><small>Come and vote for your school's PTO. The leading vote getters will receive a summer camp scholarship :)</small></h1>
       <%= simple_form_for @expo_registration do |f| %>
         <%= f.input :name %>
         <%= f.input :email %>
         <%= f.input :newsletter, as: :boolean, label: "Sign me up for the enrich.columbus newsletter!" %>
-        <%= f.input :year, as: :hidden, input_html: { value: 1 } %>
+        <%= f.input :year, as: :hidden, input_html: { value: 2 } %>
         <%= f.submit "Register", class: "btn btn-default", style: "font-weight:800;" %>
       <% end %>
     </div>
