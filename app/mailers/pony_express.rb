@@ -49,7 +49,7 @@ class PonyExpress < PostageApp::Mailer
   def expo_reminder(expo_registration)
     @expo_registration = expo_registration
     mail(
-      subject: "Dublin Summer Camp Expo Tomorrow! Great Summer Activities!",
+      subject: "2016 Dublin Summer Camp Expo!",
       to: "#{expo_registration.email}"
       )
   end
