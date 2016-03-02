@@ -41,7 +41,7 @@ class PonyExpress < PostageApp::Mailer
   def expo_registration_follow_up(expo_registration)
     @expo_registration = expo_registration
     mail(
-      subject: "The Dublin Summer Camp Expo Is Coming! Please Read!",
+      subject: "The Dublin Summer Camp Expo Is Today!",
       to: "#{expo_registration.email}"
       )
   end
