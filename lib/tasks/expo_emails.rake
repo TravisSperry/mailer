@@ -8,9 +8,11 @@ namespace :send do
     registrations = ExpoRegistration.all
     count = 0
 
-    registrations.each do |registrations|
+    registrations.each do |registration|
       count += 1
-      PonyExpress.expo_registration_follow_up(registration).deliver
+      if registration && registration.email
+        PonyExpress.expo_registration_follow_up(registration).deliver
+      end
     end
 
     puts "#{count} emails sent."
