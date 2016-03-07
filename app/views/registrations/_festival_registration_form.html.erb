@@ -95,7 +95,7 @@
         <%= f.input :student_count, as: :hidden %>
         <%= f.input :stripe_card_token, as: :hidden %>
         <%= f.input :total, as: :hidden %>
-        <%= f.input :year, as: :hidden, input_html: { value: 1 } %>
+        <%= f.input :year, as: :hidden, input_html: { value: 2 } %>
     </div>
     <div class="col-lg-4">
         <%= render 'credit_card_info' %>
@@ -112,10 +112,13 @@
   </br>
   <div class="row">
     <div style="text-align:center;margin-bottom:40px;" class="col-lg-6">
-    </div>
-    <div style="text-align:center;margin-bottom:40px;" class="col-lg-6">
       <%= link_to("http://www.mathplusacademy.com/") do %>
         <%= image_tag("Math_Plus-Logo.png", width: "300")%>
+      <% end %>
+    </div>
+    <div style="text-align:center;margin-bottom:40px;" class="col-lg-6">
+      <%= link_to("http://pastfoundation.org") do %>
+        <%= image_tag("http://pastfoundation.org/_images/pf_logo.png", width: "300")%>
       <% end %>
     </div>
   </div>
