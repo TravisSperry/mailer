@@ -5,30 +5,50 @@ background-color: #deddd2;
 }
 </style>
 <%= link_to("http://juliarobinsonmathfestival.org/") do %>
-  <%= image_tag("jrmf-logo.png")%>
+  <%= image_tag("jrmf-logo.png", width: "300px", style: 'margin-top:40px;')%>
 <% end %>
-</br>
-<h3>Math Plus Academy and the Past Foundation present...</h3>
-<h2>The 2016 Columbus Julia Robinson Mathematics Festival</h2>
-<h2>May 14th from 1pm - 4pm</h2>
-</br>
-
+<br />
+<h3 class="hidden-sm hidden-md hidden-lg text-center">Math Plus Academy and the Past Foundation present...</h3>
+<h3 class="hidden-xs">Math Plus Academy and the Past Foundation present...</h3>
+<h2 class="hidden-sm hidden-md hidden-lg text-center">
+  The 2016 Columbus   <br /> Julia Robinson Mathematics Festival
+</h2>
+<h2 class="hidden-xs">
+  2016 Columbus Julia Robinson Mathematics Festival
+</h2>
+<h2 class="hidden-sm hidden-md hidden-lg text-center">May 14th <br /> 1pm - 4pm</h2>
+<h2 class="hidden-xs">May 14th from 1pm - 4pm</h2>
+<hr>
 <div class="description">
-  The event's collaborative, non-competitive atmosphere offers an alternate setting for students to explore the joys and power of mathematics with other kids and older mentors.
-  <br><br>
   <div class="row">
     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-      <strong>How it works:</strong><br />
-      During the festival, students can join any table and work collaboratively with the volunteers and students there. Students are welcome to try out several tables until they find one that particularly interests them; once they do, they are encouraged to spend 30 &#8211; 45 minutes or more at that activity. Almost no activities will be possible to finish completely during the festival. Students will be able to take home activities that they have spent time on. There will also be a mathematical games area.
-      We provide the mathematics and mathematicians to work with the students on the activities. Please bring an adult to provide supervision of your children/students. Admission for kids is $10; supervising adults are free. If you can't afford the fee, there is a checkbox at the bottom of the form to waive it.
+      <p>
+        The event's collaborative, non-competitive atmosphere offers an alternate setting for students to explore the joys and power of mathematics with other kids and older mentors.
+      </p>
+      <strong>Grades:</strong>
+      <p>
+        4th - 8th
+      </p>
+      <strong>Location:</strong>
+      <p>
+        Past Foundation - <a href="https://goo.gl/maps/moCJVGf9ZkG2">1003 Kinnear Rd, Columbus, OH 43212</a>
+      </p>
+      <strong>How it works:</strong>
+      <p>
+        During the festival, students can join any table and work collaboratively with the volunteers and students there. Students are welcome to try out several tables until they find one that particularly interests them; once they do, they are encouraged to spend 30 &#8211; 45 minutes or more at that activity. Almost no activities will be possible to finish completely during the festival. Students will be able to take home activities that they have spent time on. There will also be a mathematical games area.
+        We provide the mathematics and mathematicians to work with the students on the activities. Please bring an adult to provide supervision of your children/students. Admission for kids is $10; supervising adults are free. If you can't afford the fee, there is a checkbox at the bottom of the form to waive it.
+      </p>
       <br><br>
     </div>
-    <div style="text-align:center;" class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-      <iframe src="https://www.youtube.com/embed/Idow6vKyaXg?rel=0" height="315" width="560" allowfullscreen="" frameborder="0"></iframe>
+    <div style="text-align:center;" class="col-lg-7 col-md-7 col-sm-12 col-xs-12 vid-container">
+      <!-- 4:3 aspect ratio -->
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Idow6vKyaXg"></iframe>
+      </div>
     </div>
   </div>
   <br><br>
-  If you have any questions, please contact us at events@enrichcolumbus.org
+  If you have any questions, please contact us at <a href="mailto:events@enrichcolumbus.org">events@enrichcolumbus.org</a>
 </div>
 
 <%= render 'festival_registration_form' %>
