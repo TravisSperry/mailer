@@ -18,6 +18,7 @@ background-color: #deddd2;
 </h2>
 <h2 class="hidden-sm hidden-md hidden-lg text-center">May 14th <br /> 1pm - 4pm</h2>
 <h2 class="hidden-xs">May 14th from 1pm - 4pm</h2>
+<a href="#registration" class="btn btn-lg btn-success">Register Now</a>
 <hr>
 <div class="description">
   <div class="row">
@@ -41,14 +42,17 @@ background-color: #deddd2;
       <br><br>
     </div>
     <div style="text-align:center;" class="col-lg-7 col-md-7 col-sm-12 col-xs-12 vid-container">
-      <!-- 4:3 aspect ratio -->
-      <div class="embed-responsive embed-responsive-16by9">
+      <div class="embed-responsive embed-responsive-16by9" style="margin-bottom:15px;">
         <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Idow6vKyaXg"></iframe>
+      </div>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="https://player.vimeo.com/video/111852556?color=c9ff23&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
     </div>
   </div>
   <br><br>
   If you have any questions, please contact us at <a href="mailto:events@enrichcolumbus.org">events@enrichcolumbus.org</a>
 </div>
-
-<%= render 'festival_registration_form' %>
+<div id="registration">
+  <%= render 'festival_registration_form' %>
+</div>
