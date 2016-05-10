@@ -55,15 +55,15 @@ class PonyExpress < PostageApp::Mailer
   end
 
   def jrmf_coming(contact_email)
-    attachments['jrmf_flyer_2015.pdf'] = File.read('app/assets/forms/jrmf_flyer_2015.pdf')
+    attachments['JRMF_2016_op.pdf'] = File.read('app/assets/forms/JRMF_2016_op.pdf')
     mail(
-      subject: "The Julia Robinson Mathematics Festival is coming!",
+      subject: "The Julia Robinson Mathematics Festival is this weekend!",
       to: "#{contact_email}"
       )
   end
 
   def jrmf_spread_word(contact_email)
-    attachments['jrmf_flyer_2015.pdf'] = File.read('app/assets/forms/jrmf_flyer_2015.pdf')
+    # attachments['JRMF_2016_op.pdf'] = File.read('app/assets/forms/JRMF_2016_op.pdf')
     mail(
       subject: "Spread the word! The best mathematics festival in Columbus.",
       to: "#{contact_email}"
