@@ -12,6 +12,8 @@ class Registration < ActiveRecord::Base
   accepts_nested_attributes_for :students, :reject_if => lambda { |a| a[:first_name].blank? && a[:last_name].blank? }
   accepts_nested_attributes_for :parents, :reject_if => lambda { |a| a[:first_name].blank? && a[:last_name].blank? }
 
+  before_create :add_code
+
   def save_with_payment
     if valid?
       charge_total = total
@@ -30,5 +32,9 @@ class Registration < ActiveRecord::Base
     if valid?
       save!
     end
+  end
+
+  def add_code
+    self.confirmation_code = SecureRandom.base64(12)
   end
 end

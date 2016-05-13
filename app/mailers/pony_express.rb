@@ -12,6 +12,15 @@ class PonyExpress < PostageApp::Mailer
       )
   end
 
+	def registration_ticket(registration)
+		@registration = registration
+
+    mail(
+      subject: "Julia Robinson Mathematics Festival - Reminder",
+      to: "#{@registration.contact_email}"
+    )
+	end
+
   def monthly_mailer(contact)
     @contact = contact
 
