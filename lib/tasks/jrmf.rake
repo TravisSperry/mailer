@@ -4,7 +4,9 @@ task count: :environment do
 
      count = 0
      registrations.each do |registration|
-       count
+       count += registration.students.count
      end
+
+     puts count
    end
 end
