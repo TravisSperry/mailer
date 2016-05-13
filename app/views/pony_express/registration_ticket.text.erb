@@ -1,0 +1,26 @@
+JRMF
+
+Thank you for registering for <%= @registration.event.title if @registration.event_id %>. The event will be held on May 14th, from 1-4 pm at the PAST Foundation (https://goo.gl/maps/s5oZ5yL8wqm) .
+
+Please bring a copy of this email or your original registration confirmation.
+
+
+** Number of students registered: <%= @registration.student_count %>
+------------------------------------------------------------
+<% if @registration.confirmation_code %>
+
+** Confirmation Code: <%= @registration.confirmation_code %>
+------------------------------------------------------------
+<% end %>
+
+Connect With Us:
+
+Facebook (www.facebook.com/enrichcolumbus)
+Twitter (www.twitter.com/enrichcolumbus)
+Google + (https://plus.google.com/+EnrichcolumbusOrg614)
+
+Contact Info:
+
+Phone: 614.260.6162
+
+Email: travis@enrichcolumbus.org (mailto:travis@enrichcolumbus.org)
