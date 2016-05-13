@@ -1,4 +1,4 @@
-task count: :environment do
+task count_students: :environment do
    def count_students_registered(year)
      registrations = Registration.where(year: year)
 
