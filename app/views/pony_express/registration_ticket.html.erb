@@ -50,9 +50,17 @@
                       <table class="twelve columns" style="border-spacing: 0;border-collapse: collapse;padding: 0;vertical-align: top;text-align: left;margin: 0 auto;width: 580px;">
                         <tr style="padding: 0;vertical-align: top;text-align: left;">
                           <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;padding: 0px 0px 10px;vertical-align: top;text-align: left;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;margin: 0;line-height: 19px;font-size: 14px;border-collapse: collapse;">
-                            <p class="lead" style="margin: 0;margin-bottom: 10px;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;padding: 0;text-align: left;line-height: 21px;font-size: 18px;">Thank you for registering for <%= @registration.event.title if @registration.event_id %>. The event will be held on May 14th, from 1-4 pm at the <a href="https://goo.gl/maps/s5oZ5yL8wqm">PAST Foundation</a>.
+                            <p class="lead" style="margin: 0;margin-bottom: 10px;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;padding: 0;text-align: left;line-height: 21px;font-size: 18px;">Thank you for registering for The Julia Robinson Mathematics Festival. The event is tomorrow, from 1-4 pm at the <a href="https://goo.gl/maps/s5oZ5yL8wqm">PAST Foundation</a>.<br/>
+                              <a href="https://goo.gl/maps/s5oZ5yL8wqm">
+                                1002 Kinnear Rd<br/>
+                                Columbus, Ohio 43212
+                              </a>
                             </p>
                             <p class="lead" style="margin: 0;margin-bottom: 10px;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;padding: 0;text-align: left;line-height: 21px;font-size: 18px;">Please bring a copy of this email or your original registration confirmation.
+                            </p>
+                            <p class="lead" style="margin: 0;margin-bottom: 10px;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;padding: 0;text-align: left;line-height: 21px;font-size: 18px;">Overflow parking will be available across the street at The Metro School.
+                            </p>
+                            <p class="lead" style="margin: 0;margin-bottom: 10px;color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;padding: 0;text-align: left;line-height: 21px;font-size: 18px;">No food and drink will be served or sold at this event.
                             </p>
                             <h3 style="color: #222222;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;font-weight: normal;padding: 0;margin: 0;text-align: left;line-height: 1.3;word-break: normal;font-size: 32px;">Number of students registered: <%= @registration.student_count %></h3>
                             <% if @registration.confirmation_code %>

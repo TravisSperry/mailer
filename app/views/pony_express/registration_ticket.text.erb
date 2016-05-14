@@ -1,13 +1,18 @@
 JRMF
 
-Thank you for registering for <%= @registration.event.title if @registration.event_id %>. The event will be held on May 14th, from 1-4 pm at the PAST Foundation (https://goo.gl/maps/s5oZ5yL8wqm) .
+Thank you for registering for Julia Robinson Mathematics Festival. The event will be held on May 14th, from 1-4 pm at the PAST Foundation (https://goo.gl/maps/s5oZ5yL8wqm).
 
 Please bring a copy of this email or your original registration confirmation.
+
+Overflow parking will be available across the street at The Metro School.
+
+No food and drink will be served or sold at this event.
 
 
 ** Number of students registered: <%= @registration.student_count %>
 ------------------------------------------------------------
 <% if @registration.confirmation_code %>
+
 
 ** Confirmation Code: <%= @registration.confirmation_code %>
 ------------------------------------------------------------
